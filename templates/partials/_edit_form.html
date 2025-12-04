@@ -1,0 +1,31 @@
+<tr id="term-{{ term.id }}" class="bg-yellow-50 dark:bg-yellow-900/20">
+    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-100">
+        {{ term.concept_id }}
+    </td>
+    <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
+        <input type="text" name="pref_label_es" value="{{ term.pref_label_es or '' }}"
+            class="w-full border border-gray-300 dark:border-neutral-600 rounded-sm px-2 py-1 mb-1 bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 focus:ring-slate-500 focus:border-slate-500"
+            placeholder="ES">
+        <input type="text" name="pref_label_en" value="{{ term.pref_label_en or '' }}"
+            class="w-full border border-gray-300 dark:border-neutral-600 rounded-sm px-2 py-1 bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 focus:ring-slate-500 focus:border-slate-500"
+            placeholder="EN">
+    </td>
+    <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
+        <textarea name="definition_es"
+            class="w-full border border-gray-300 dark:border-neutral-600 rounded-sm px-2 py-1 bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 focus:ring-slate-500 focus:border-slate-500"
+            rows="2">{{ term.definition_es or '' }}</textarea>
+        <!-- Hidden EN definition for now or add field -->
+        <input type="hidden" name="definition_en" value="{{ term.definition_en or '' }}">
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+        <button hx-post="{{ url_for('vocab.update_term', term_id=term.id) }}" hx-include="closest tr"
+            hx-target="#term-{{ term.id }}" hx-swap="outerHTML"
+            class="text-green-600 dark:text-green-400 hover:text-green-900 dark:hover:text-green-300 mr-2">
+            Guardar
+        </button>
+        <button hx-get="{{ url_for('vocab.cancel_edit', term_id=term.id) }}" hx-target="#term-{{ term.id }}"
+            hx-swap="outerHTML" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">
+            Cancelar
+        </button>
+    </td>
+</tr>

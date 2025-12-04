@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_3">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Valor probablemente malo (SDN)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Probably bad value (SDN)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor probablemente malo.</skos:definition>
+    <skos:definition xml:lang="en">Probably bad value</skos:definition>
+    <skos:altLabel xml:lang="en">3</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_3"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_IODE">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Esquema de Banderas de Calidad IODE</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">IODE Quality Flag Scheme</skos:prefLabel>
+    <skos:definition xml:lang="es">Esquema de banderas de calidad principal, recomendado por el Intergovernmental Oceanographic Data and Information Exchange (IODE) para facilitar el intercambio de datos.</skos:definition>
+    <skos:definition xml:lang="en">Primary quality flag scheme recommended by the Intergovernmental Oceanographic Data and Information Exchange (IODE) to facilitate data exchange.</skos:definition>
+    <skos:altLabel xml:lang="en">IODE</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/IODE_1"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/IODE_2"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/IODE_3"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/IODE_4"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/IODE_9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_1">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Correcto (GTSPP)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Appears to be correct (GTSPP)</skos:prefLabel>
+    <skos:definition xml:lang="es">QC realizado; parece ser correcto.</skos:definition>
+    <skos:definition xml:lang="en">QC was performed; appears to be correct</skos:definition>
+    <skos:altLabel xml:lang="en">1</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_1"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_GTSPP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <dc:title xml:lang="es">tesauro de Banderas De Calidad</dc:title>
+    <dc:title xml:lang="en">thesauri of Banderas De Calidad</dc:title>
+    <dc:creator>Pablo Rosales</dc:creator>
+    <dc:creator>Ana Baldoni</dc:creator>
+    <dc:publisher>Universidad Nacional de la Patagonia San Juan Bosco (UNPSJB)</dc:publisher>
+    <dc:publisher>Instituto Nacional de Investigación y Desarrollo Pesquero (INIDEP)</dc:publisher>
+    <dc:date>2025-07-28</dc:date>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_IODE"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_ODV"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_0"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_1"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_2"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_3"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_4"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_5"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_9"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_WOCE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_5">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Dato faltante por pérdida de muestra (WOCE)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Data missing due to sample loss (WOCE)</skos:prefLabel>
+    <skos:definition xml:lang="es">Se esperaba medir el dato, pero la observación falta debido a pérdida de la muestra, contaminación, etc.</skos:definition>
+    <skos:definition xml:lang="en">Data were expected to be measured, but the observation is missing due to sample loss, contamination, etc.</skos:definition>
+    <skos:altLabel xml:lang="en">5</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_9"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_WOCE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_4">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Valor malo (SDN)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Bad value (SDN)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor malo.</skos:definition>
+    <skos:definition xml:lang="en">Bad value</skos:definition>
+    <skos:altLabel xml:lang="en">4</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_4"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_4">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Medición mala (WOCE)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Bad measurement (WOCE)</skos:prefLabel>
+    <skos:definition xml:lang="es">Medición evaluada como mala.</skos:definition>
+    <skos:definition xml:lang="en">Bad measurement</skos:definition>
+    <skos:altLabel xml:lang="en">4</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_4"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_WOCE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Esquema de Banderas de Calidad SeaDataNet</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">SeaDataNet Quality Flag Scheme</skos:prefLabel>
+    <skos:definition xml:lang="es">Esquema de banderas de calidad utilizado por la infraestructura pan-europea SeaDataNet para la gestión de datos marinos y oceánicos.</skos:definition>
+    <skos:definition xml:lang="en">Quality flag scheme used by the SeaDataNet pan-European infrastructure for marine and ocean data management.</skos:definition>
+    <skos:altLabel xml:lang="en">SDN</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_0"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_1"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_2"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_3"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_4"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_5"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_6"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_7"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_8"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_9"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_A"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/IODE_4">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Malo</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Bad</skos:prefLabel>
+    <skos:definition xml:lang="es">Falló pruebas de QC críticas documentadas o fue asignado así por el proveedor de datos.</skos:definition>
+    <skos:definition xml:lang="en">Failed critical documented QC test(s) or as assigned by the data provider</skos:definition>
+    <skos:altLabel xml:lang="en">4</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="ODV_8"/>
+    <skos:exactMatch rdf:resource="SDN_4"/>
+    <skos:exactMatch rdf:resource="SDN_6"/>
+    <skos:exactMatch rdf:resource="SDN_7"/>
+    <skos:exactMatch rdf:resource="GTSPP_4"/>
+    <skos:exactMatch rdf:resource="WOCE_4"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_IODE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_3">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Medición cuestionable (WOCE)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Questionable measurement (WOCE)</skos:prefLabel>
+    <skos:definition xml:lang="es">Medición evaluada como cuestionable.</skos:definition>
+    <skos:definition xml:lang="en">Questionable measurement</skos:definition>
+    <skos:altLabel xml:lang="en">3</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_3"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_WOCE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_GTSPP">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Esquema de Banderas de Calidad GTSPP</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">GTSPP Quality Flag Scheme</skos:prefLabel>
+    <skos:definition xml:lang="es">Esquema de banderas de calidad utilizado por el Global Temperature and Salinity Profile Programme (GTSPP).</skos:definition>
+    <skos:definition xml:lang="en">Quality flag scheme used by the Global Temperature and Salinity Profile Programme (GTSPP).</skos:definition>
+    <skos:altLabel xml:lang="en">GTSPP</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_0"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_1"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_2"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_3"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_4"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_5"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_5">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Valor cambiado por QC (GTSPP)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Value was changed as a result of QC (GTSPP)</skos:prefLabel>
+    <skos:definition xml:lang="es">El valor fue cambiado como resultado del QC.</skos:definition>
+    <skos:definition xml:lang="en">The value was changed as a result of QC</skos:definition>
+    <skos:altLabel xml:lang="en">5</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_1"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_GTSPP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/ODV_4">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Cuestionable (ODV)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Questionable (ODV)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor cuestionable.</skos:definition>
+    <skos:definition xml:lang="en">Questionable</skos:definition>
+    <skos:altLabel xml:lang="en">4</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_3"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_ODV"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_8">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Valor interpolado (SDN)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Interpolated value (SDN)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor interpolado.</skos:definition>
+    <skos:definition xml:lang="en">Interpolated value</skos:definition>
+    <skos:altLabel xml:lang="en">8</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_1"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_WOCE">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Esquema de Banderas de Calidad de Muestras de Agua WOCE</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">WOCE Water Sample Quality Flag Scheme</skos:prefLabel>
+    <skos:definition xml:lang="es">Esquema de banderas de calidad utilizado en el World Ocean Circulation Experiment (WOCE) para calificar mediciones de muestras de agua.</skos:definition>
+    <skos:definition xml:lang="en">Quality flag scheme used in the World Ocean Circulation Experiment (WOCE) to qualify water sample measurements.</skos:definition>
+    <skos:altLabel xml:lang="en">WOCE</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_1"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_2"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_3"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_4"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_5"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_6"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_7"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_8"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_3">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Dudoso (GTSPP)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Appears doubtful (GTSPP)</skos:prefLabel>
+    <skos:definition xml:lang="es">QC realizado; parece dudoso.</skos:definition>
+    <skos:definition xml:lang="en">QC performed; appears doubtful</skos:definition>
+    <skos:altLabel xml:lang="en">3</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_3"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_GTSPP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_0">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Sin asignación de control de calidad (GTSPP)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">No quality control has been assigned (GTSPP)</skos:prefLabel>
+    <skos:definition xml:lang="es">No se ha asignado un control de calidad.</skos:definition>
+    <skos:definition xml:lang="en">No quality control has been assigned</skos:definition>
+    <skos:altLabel xml:lang="en">0</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_2"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_GTSPP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_ODV">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Esquema de Banderas de Calidad ODV</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">ODV Quality Flag Scheme</skos:prefLabel>
+    <skos:definition xml:lang="es">Esquema genérico de banderas de calidad utilizado por el software Ocean Data View (ODV).</skos:definition>
+    <skos:definition xml:lang="en">Generic quality flag scheme used by the Ocean Data View (ODV) software.</skos:definition>
+    <skos:altLabel xml:lang="en">ODV</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/ODV_0"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/ODV_1"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/ODV_4"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/ODV_8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_2">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Probablemente bueno (GTSPP)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Probably good (GTSPP)</skos:prefLabel>
+    <skos:definition xml:lang="es">QC realizado; probablemente bueno.</skos:definition>
+    <skos:definition xml:lang="en">QC was performed; probably good</skos:definition>
+    <skos:altLabel xml:lang="en">2</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_1"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_GTSPP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_4">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Erróneo (GTSPP)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Appears erroneous (GTSPP)</skos:prefLabel>
+    <skos:definition xml:lang="es">QC realizado; parece erróneo.</skos:definition>
+    <skos:definition xml:lang="en">QC performed; appears erroneous</skos:definition>
+    <skos:altLabel xml:lang="en">4</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_4"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_GTSPP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_2">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Valor probablemente bueno (SDN)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Probably good value (SDN)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor probablemente bueno.</skos:definition>
+    <skos:definition xml:lang="en">Probably good value</skos:definition>
+    <skos:altLabel xml:lang="en">2</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_1"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_8">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Integración irregular de pico cromatográfico (WOCE)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Irregular digital chromatographic peak integration (WOCE)</skos:prefLabel>
+    <skos:definition xml:lang="es">El valor proviene de una integración digital irregular de un pico cromatográfico.</skos:definition>
+    <skos:definition xml:lang="en">Irregular digital chromatographic peak integration</skos:definition>
+    <skos:altLabel xml:lang="en">8</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_2"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_WOCE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_6">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Valor bajo el límite de detección (SDN)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Value below detection (SDN)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor por debajo del límite de detección.</skos:definition>
+    <skos:definition xml:lang="en">Value below detection</skos:definition>
+    <skos:altLabel xml:lang="en">6</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_4"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/IODE_1">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Bueno</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Good</skos:prefLabel>
+    <skos:definition xml:lang="es">Pasó las pruebas de control de calidad (QC) documentadas y requeridas.</skos:definition>
+    <skos:definition xml:lang="en">Passed documented required QC tests</skos:definition>
+    <skos:altLabel xml:lang="en">1</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="ODV_0"/>
+    <skos:exactMatch rdf:resource="SDN_1"/>
+    <skos:exactMatch rdf:resource="SDN_2"/>
+    <skos:exactMatch rdf:resource="SDN_5"/>
+    <skos:exactMatch rdf:resource="SDN_8"/>
+    <skos:exactMatch rdf:resource="GTSPP_1"/>
+    <skos:exactMatch rdf:resource="GTSPP_2"/>
+    <skos:exactMatch rdf:resource="GTSPP_5"/>
+    <skos:exactMatch rdf:resource="WOCE_2"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_IODE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_1">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Valor bueno (SDN)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Good value (SDN)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor bueno.</skos:definition>
+    <skos:definition xml:lang="en">Good value</skos:definition>
+    <skos:altLabel xml:lang="en">1</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_1"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/ODV_0">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Bueno (ODV)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Good (ODV)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor bueno.</skos:definition>
+    <skos:definition xml:lang="en">Good</skos:definition>
+    <skos:altLabel xml:lang="en">0</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_1"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_ODV"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/ODV_1">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Desconocido (ODV)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Unknown (ODV)</skos:prefLabel>
+    <skos:definition xml:lang="es">Calidad desconocida.</skos:definition>
+    <skos:definition xml:lang="en">Unknown</skos:definition>
+    <skos:altLabel xml:lang="en">1</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_2"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_ODV"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_9">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Muestra no extraída (WOCE)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Sample not drawn (WOCE)</skos:prefLabel>
+    <skos:definition xml:lang="es">No se extrajo una muestra para esta medición de esta botella.</skos:definition>
+    <skos:definition xml:lang="en">Sample not drawn for this measurement from this bottle</skos:definition>
+    <skos:altLabel xml:lang="en">9</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_9"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_WOCE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/IODE_9">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Dato faltante</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Missing data</skos:prefLabel>
+    <skos:definition xml:lang="es">Se utiliza como marcador de posición cuando faltan datos.</skos:definition>
+    <skos:definition xml:lang="en">Used as place holder when data are missing</skos:definition>
+    <skos:altLabel xml:lang="en">9</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="SDN_9"/>
+    <skos:exactMatch rdf:resource="GTSPP_9"/>
+    <skos:exactMatch rdf:resource="WOCE_1"/>
+    <skos:exactMatch rdf:resource="WOCE_5"/>
+    <skos:exactMatch rdf:resource="WOCE_9"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_IODE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/IODE_3">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Cuestionable / Sospechoso</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Questionable/suspect</skos:prefLabel>
+    <skos:definition xml:lang="es">Falló pruebas métricas no críticas documentadas o pruebas subjetivas.</skos:definition>
+    <skos:definition xml:lang="en">Failed non-critical documented metric or subjective test(s)</skos:definition>
+    <skos:altLabel xml:lang="en">3</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="ODV_4"/>
+    <skos:exactMatch rdf:resource="SDN_3"/>
+    <skos:exactMatch rdf:resource="SDN_A"/>
+    <skos:exactMatch rdf:resource="GTSPP_3"/>
+    <skos:exactMatch rdf:resource="WOCE_3"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_IODE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_7">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Medición manual de pico cromatográfico (WOCE)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Manual chromatographic peak measurement (WOCE)</skos:prefLabel>
+    <skos:definition xml:lang="es">El valor proviene de una medición manual de un pico cromatográfico.</skos:definition>
+    <skos:definition xml:lang="en">Manual chromatographic peak measurement</skos:definition>
+    <skos:altLabel xml:lang="en">7</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_2"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_WOCE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_5">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Valor cambiado (SDN)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Changed value (SDN)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor cambiado.</skos:definition>
+    <skos:definition xml:lang="en">Changed value</skos:definition>
+    <skos:altLabel xml:lang="en">5</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_1"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_A">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Fenómeno del valor incierto (SDN)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Value phenomenon uncertain (SDN)</skos:prefLabel>
+    <skos:definition xml:lang="es">El fenómeno asociado al valor es incierto.</skos:definition>
+    <skos:definition xml:lang="en">Value phenomenon uncertain</skos:definition>
+    <skos:altLabel xml:lang="en">A</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_3"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_2">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Medición aceptable (WOCE)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Acceptable measurement (WOCE)</skos:prefLabel>
+    <skos:definition xml:lang="es">Medición evaluada como aceptable.</skos:definition>
+    <skos:definition xml:lang="en">Acceptable measurement</skos:definition>
+    <skos:altLabel xml:lang="en">2</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_1"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_WOCE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/IODE_2">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">No evaluado o desconocido</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Not evaluated, not available or unknown</skos:prefLabel>
+    <skos:definition xml:lang="es">Se utiliza para datos a los que no se les realizó ninguna prueba de QC o para los que no se dispone de información sobre su calidad.</skos:definition>
+    <skos:definition xml:lang="en">Used for data when no QC test performed or the information on quality is not available</skos:definition>
+    <skos:altLabel xml:lang="en">2</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="ODV_1"/>
+    <skos:exactMatch rdf:resource="SDN_0"/>
+    <skos:exactMatch rdf:resource="GTSPP_0"/>
+    <skos:exactMatch rdf:resource="WOCE_6"/>
+    <skos:exactMatch rdf:resource="WOCE_7"/>
+    <skos:exactMatch rdf:resource="WOCE_8"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_IODE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/GTSPP_9">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Valor faltante (GTSPP)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">The value is missing (GTSPP)</skos:prefLabel>
+    <skos:definition xml:lang="es">El valor falta.</skos:definition>
+    <skos:definition xml:lang="en">The value is missing</skos:definition>
+    <skos:altLabel xml:lang="en">9</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_9"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_GTSPP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/ODV_8">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Malo (ODV)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Bad (ODV)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor malo.</skos:definition>
+    <skos:definition xml:lang="en">Bad</skos:definition>
+    <skos:altLabel xml:lang="en">8</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_4"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_ODV"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_9">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Valor faltante (SDN)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Missing value (SDN)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor faltante.</skos:definition>
+    <skos:definition xml:lang="en">Missing value</skos:definition>
+    <skos:altLabel xml:lang="en">9</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_9"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_6">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Media de mediciones replicadas (WOCE)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Mean of replicate measurements (WOCE)</skos:prefLabel>
+    <skos:definition xml:lang="es">El valor es la media de mediciones replicadas.</skos:definition>
+    <skos:definition xml:lang="en">Mean of replicate measurements</skos:definition>
+    <skos:altLabel xml:lang="en">6</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_2"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_WOCE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/WOCE_1">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Muestra extraída, análisis no recibido (WOCE)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Sample drawn, analysis not received (WOCE)</skos:prefLabel>
+    <skos:definition xml:lang="es">La muestra para esta medición fue extraída de la botella, pero el análisis no se recibió.</skos:definition>
+    <skos:definition xml:lang="en">Sample for this measurement was drawn from water bottle, but analysis not received</skos:definition>
+    <skos:altLabel xml:lang="en">1</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_9"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_WOCE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_7">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Valor en exceso (SDN)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Value in excess (SDN)</skos:prefLabel>
+    <skos:definition xml:lang="es">Valor en exceso del límite.</skos:definition>
+    <skos:definition xml:lang="en">Value in excess</skos:definition>
+    <skos:altLabel xml:lang="en">7</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_4"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/banderas_de_calidad/SDN_0">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/"/>
+    <skos:prefLabel xml:lang="es">Sin control de calidad (SDN)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">No quality control (SDN)</skos:prefLabel>
+    <skos:definition xml:lang="es">No se realizó control de calidad.</skos:definition>
+    <skos:definition xml:lang="en">No quality control</skos:definition>
+    <skos:altLabel xml:lang="en">0</skos:altLabel>
+    <dc:source>Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013.Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3)</dc:source>
+    <skos:exactMatch rdf:resource="IODE_2"/>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/banderas_de_calidad/QF_SDN"/>
+  </rdf:Description>
+</rdf:RDF>

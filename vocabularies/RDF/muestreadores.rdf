@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/CTD">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">CTD</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">CTD</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento que mide simultáneamente la conductividad eléctrica del agua de mar, su temperatura y la presión en la columna de agua. Permite la integración de diferentes sensores auxiliares (pH, oxígeno disuelto, turbidez, fluorescencia)</skos:definition>
+    <skos:definition xml:lang="en">Instrument that simultaneously measures the electrical conductivity of seawater, its temperature, and the pressure in the water column. It allows the integration of different auxiliary sensors (pH, dissolved oxygen, turbidity, fluorescence).</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/130"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0042"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0058"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0040"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0149"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TRCITADEL"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0047"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0002"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL1883"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL1162"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/AGEAR">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Equipo de pesca activa</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Active fishing gear</skos:prefLabel>
+    <skos:definition xml:lang="es">Dispositivos de pesca en los que la captura se basa en la persecución de la especie objetivo (ej. red de arrastre, dragas )</skos:definition>
+    <skos:definition xml:lang="en">Fishing devices in which the capture is based on the pursuit of the target species (e.g., trawl net, dredges).</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/64"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/NET"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/DREDGE"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL1575"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/NETT0024">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Red cónica tipo Motoda</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Motoda horizontal closing plankton net</skos:prefLabel>
+    <skos:definition xml:lang="es">Red de plancton con cierre y división horizontal.</skos:definition>
+    <skos:definition xml:lang="en">A horizontally-divided closing plankton net.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/NETT0024/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL1575">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Caña - línea</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Handlines and pole-lines</skos:prefLabel>
+    <skos:definition xml:lang="es">Aparato de pesca que consiste en una línea con uno o más anzuelos que se maneja manualmente.</skos:definition>
+    <skos:definition xml:lang="en">Fishing gear consisting of a line with one or more hooks operated by hand.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/TOOL1575/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/AGEAR"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TRAP">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Trampa</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Trap</skos:prefLabel>
+    <skos:definition xml:lang="es">Dispositivo pasivo diseñado para que los organismos puedan entrar pero no salir fácilmente.</skos:definition>
+    <skos:definition xml:lang="en">A passive device designed for organisms to enter but not easily exit.</skos:definition>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PGEAR"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/POT"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TNETS"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/GNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/NETT0071">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Red Isaacs-Kidd (IKMT)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Isaacs-Kidd midwater trawl net</skos:prefLabel>
+    <skos:definition xml:lang="es">Red de arrastre pelágica de media agua diseñada para recolectar organismos a altas velocidades de remolque.</skos:definition>
+    <skos:definition xml:lang="en">A mid-water pelagic trawl designed to collect organisms at high towing speeds.</skos:definition>
+    <skos:altLabel xml:lang="en">IKMT</skos:altLabel>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/NETT0071/"/>
+    <skos:closeMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/NETT0073/"/>
+    <skos:closeMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/NETT0072/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/BATHY">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Batitermografos</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Bathythermograph</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento que mide perfiles verticales de temperatura del mar (MBT, XBT).</skos:definition>
+    <skos:definition xml:lang="en">Instrument that measures vertical profiles of sea temperature (MBT, XBT).</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/132"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/JIG">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Poteras</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Jigs</skos:prefLabel>
+    <skos:definition xml:lang="es">Tipo de señuelo de pesca que consiste en un anzuelo con peso. Se utiliza con un movimiento de sube y baja para la pesca de calamar.</skos:definition>
+    <skos:definition xml:lang="en">A type of fishing lure consisting of a weighted hook. It is used with a jerking, up-and-down motion for squid fishing.</skos:definition>
+    <skos:altLabel xml:lang="en">Jiggers</skos:altLabel>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/FISHNET"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0994">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Red Mini-Bongo</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Mini-bongo net</skos:prefLabel>
+    <skos:definition xml:lang="es">Versión pequeña de la red bongo.</skos:definition>
+    <skos:definition xml:lang="en">Small version of the bongo net.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/TOOL0994/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/CAM">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Camara fotográfica</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Camera</skos:prefLabel>
+    <skos:definition xml:lang="es">Todo tipo de equipo fotográfico utilizado para registrar imágenes visuales. Incluye fotografías, videos, películas y sistemas digitales.</skos:definition>
+    <skos:definition xml:lang="en">All types of photographic equipment used to record visual images. Includes photographs, videos, films, and digital systems.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/311"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/MNET">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Multired</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Multinet</skos:prefLabel>
+    <skos:definition xml:lang="es">Sistema que comprende varias redes que pueden abrirse y cerrarse secuencialmente para recolectar una serie de muestras (microzooplancton, mesozooplancton y nekton) durante un remolque o arrastre.</skos:definition>
+    <skos:definition xml:lang="en">System comprising several nets that can be opened and closed sequentially to collect a series of samples (microzooplankton, mesozooplankton, and nekton) during one tow or trawl.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/68"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/NETT0054">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Hensen</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Hensen net</skos:prefLabel>
+    <skos:definition xml:lang="es">Red de plancton vertical con una sección superior cónica de lona y una sección inferior de malla filtrante.</skos:definition>
+    <skos:definition xml:lang="en">A vertical plankton net with a conical canvas upper section and a filtering mesh lower section.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/NETT0054/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/PTNET">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Red de arrastre pelágica</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">pelagic trawl nets</skos:prefLabel>
+    <skos:definition xml:lang="es">Red remolcada a través de la columna de agua diseñada para muestrear peces o nécton que nadan libremente.</skos:definition>
+    <skos:definition xml:lang="en">A net towed through the water column designed to sample free-swimming nekton or fish.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L05/current/23/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/FISHNET"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0267">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">STAR ODDI Starmon mini</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">STAR ODDI Starmon mini</skos:prefLabel>
+    <skos:definition xml:lang="es">Un registrador de temperatura submarino en una carcasa de plástico (400 m) o de titanio (11000 m). La resolución promedio de la temperatura es de 0.013 °C y la precisión es de ±0.05 °C en un rango de -2 °C a 40 °C; la precisión del reloj es mejor que 1 minuto por mes. Equilibración de la temperatura: 63% en 18 segundos (carcasa de plástico) o 6 segundos (carcasa de titanio); 100% en 3 minutos (carcasa de plástico) o 1 minuto (carcasa de titanio).</skos:definition>
+    <skos:definition xml:lang="en">An underwater temperature recorder in either a plastic (400m) or titanium (11000m) casing. Temperature average resolution is 0.013C and accuracy is +-0.05C over a range -2C to 40C: clock accuray better than 1 minute per month. Temperature equilibration: 63% 18 seconds (plastic case) or 6 seconds (titanium case); 100% 3 minutes (plastic case) or 1 minute (titanium case).</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/TOOL0267/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TEMP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TSAL">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Termosalinografo</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Thermosalinograph</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento con sensores de temperatura y conductividad, instalado cerca de una toma de agua en una embarcación, para medir en continuo la capa superficial del agua.</skos:definition>
+    <skos:definition xml:lang="en">Instrument with temperature and conductivity sensors, installed near a water intake on a vessel, to continuously measure the surface water layer.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/133"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0190"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0667"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/CPROF">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Perfilador de corriente</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Current profiler</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento que mide la velocidad y la dirección de la corriente a múltiples profundidades predeterminadas simultáneamente (Ej. ADCP).</skos:definition>
+    <skos:definition xml:lang="en">Instrument that measures the speed and direction of the current at multiple predetermined depths simultaneously (e.g., ADCP).</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/115"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0062"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0061"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/KMEC150"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/NAQP400"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0191">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Termómetro Sea-Bird SBE 38</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Sea-Bird SBE 38 thermometer</skos:prefLabel>
+    <skos:definition xml:lang="es">Un termómetro oceanográfico con un rango de medición de -5 a +35 °C; precisión absoluta mejor que 0.001 °C y resolución de aproximadamente 0.00025 °C. El sensor es un termistor envejecido ultraestable con una tasa de deriva de menos de 0.002 °C por año. La resistencia de referencia es un VISHAY sellado herméticamente. Puede ser instalado en una carcasa de presión de titanio para 10,500 m.</skos:definition>
+    <skos:definition xml:lang="en">An oceanographic thermometer with a measurement range of -5 to +35C; absolute accuracy better than 0.001C and resolution of approximately 0.00025C. The sensor is an ultra-stable aged thermistor with a drift rate of less than 0.002C per year. The reference resistor is a hermetically sealed VISHAY. It may be fitted in a 10,500m titanium pressure housing.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0191/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TEMP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/SVEL">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Sensores de velocidad del sonido</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Sound velocity sensors</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento que mide la velocidad del sonido en el agua de mar</skos:definition>
+    <skos:definition xml:lang="en">Instrument that measures the speed of sound in seawater.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/185"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TRCITADEL">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">CTD-NV Teledyne RD CITADEL</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Teledyne RD CITADEL CTD-NV</skos:prefLabel>
+    <skos:definition xml:lang="es">Un CTD (Conductividad, Temperatura, Profundidad) robusto y de muestreo rápido, diseñado para mediciones de precisión en entornos marinos exigentes. Utiliza una celda de conductividad inductiva no externa (NXIC) patentada, lo que lo hace duradero y adecuado para perfiles, remolques o para ser montado en AUVs y ROVs.</skos:definition>
+    <skos:definition xml:lang="en">A rugged, fast-sampling CTD (Conductivity, Temperature, Depth) designed for precision measurement in demanding marine environments. It utilizes a patented Non-eXternal Inductive Cell (NXIC) for conductivity, making it durable and well-suited for profiling, towing, or mounting on AUVs and ROVs.</skos:definition>
+    <skos:closeMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL1163/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CTD"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/WSTAT">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Estacion meteorologica</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Weather station</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento que realiza mediciones meteorológicas de rutina en la atmósfera, normalmente la presión del aire, la temperatura y la humedad.</skos:definition>
+    <skos:definition xml:lang="en">Instrument that performs routine meteorological measurements in the atmosphere, typically air pressure, temperature, and humidity.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/102"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TNETS">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Trampa de Peces</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">trap nets</skos:prefLabel>
+    <skos:definition xml:lang="es">Redes estacionarias fijadas al fondo que consisten en un laberinto en el que los peces pueden entrar fácilmente, pero del que no pueden escapar.</skos:definition>
+    <skos:definition xml:lang="en">Stationary nets fixed to the bottom, consisting of a labyrinth-like chamber into which fish can easily enter and from which they cannot easily escape.</skos:definition>
+    <skos:altLabel xml:lang="en">Fish trap</skos:altLabel>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L05/current/74/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TRAP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <dc:title xml:lang="es">tesauro de Muestreadores</dc:title>
+    <dc:title xml:lang="en">thesauri of Muestreadores</dc:title>
+    <dc:creator>Pablo Rosales</dc:creator>
+    <dc:creator>Ana Baldoni</dc:creator>
+    <dc:publisher>Universidad Nacional de la Patagonia San Juan Bosco (UNPSJB)</dc:publisher>
+    <dc:publisher>Instituto Nacional de Investigación y Desarrollo Pesquero (INIDEP)</dc:publisher>
+    <dc:date>2025-07-28</dc:date>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/DSAMP"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PGEAR"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/AGEAR"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/WSTAT"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CMET"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CPROF"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/RADM"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CTD"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/BATHY"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TSAL"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TEMP"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/SBES"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/MBES"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/SVEL"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CAM"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/SALIN"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/DGAS"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/HYDRO"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/ROSETTE"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/STRAP"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/FLOWCAM"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL1177"/>
+    <skos:hasTopConcept rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL1853"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0149">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Meerestechnik-Elektronik KMS</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Meerestechnik-Elektronik KMS cable probe</skos:prefLabel>
+    <skos:definition xml:lang="es">Sonda de cable utilizada para mediciones oceanográficas.</skos:definition>
+    <skos:definition xml:lang="en">A cable probe used for oceanographic measurements.</skos:definition>
+    <skos:altLabel xml:lang="en">KMS</skos:altLabel>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/TOOL0149/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CTD"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/GNETS">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Red de Enmalle</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">gill nets</skos:prefLabel>
+    <skos:definition xml:lang="es">Red que deriva o se mantiene en el fondo en la que los peces quedan enredados, normalmente por sus agallas.</skos:definition>
+    <skos:definition xml:lang="en">Nets that drift or stand on the sea floor in which fish become entangled, usually through their gill covers.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L05/current/65/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TRAP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/SNETS">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Red de Cerco</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">seine nets</skos:prefLabel>
+    <skos:definition xml:lang="es">Red que cuelga verticalmente en el agua, con su borde inferior sostenido por pesos y su borde superior por flotadores, usada para rodear peces.</skos:definition>
+    <skos:definition xml:lang="en">A surrounding net that hangs vertically in the water with its bottom edge held down by weights and its top edge buoyed by floats, used to encircle fish.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L05/current/73/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/FISHNET"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/NET">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Redes</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Nets</skos:prefLabel>
+    <skos:definition xml:lang="es">Término general para cualquier arte de pesca fabricado con mallas de fibra anudada.</skos:definition>
+    <skos:definition xml:lang="en">General term for any fishing gear made from knotted fiber meshes.</skos:definition>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/AGEAR"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/FISHNET"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/DSAMP">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Muestreador de agua discreto</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">discrete water samplers</skos:prefLabel>
+    <skos:definition xml:lang="es">Un dispositivo que recolecta una muestra de agua in-situ a cualquier profundidad y la sube a la superficie sin contaminación.</skos:definition>
+    <skos:definition xml:lang="en">A device that collects an in-situ discrete water sample from any depth and returns it to the surface without contamination by the waters through which it passes, such as a water bottle.</skos:definition>
+    <skos:altLabel xml:lang="en">Water Bottle</skos:altLabel>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L05/current/30/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/BTL"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/BUCKT"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/NETT0109">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Red Nackthai</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Nackthai high-speed plankton sampler</skos:prefLabel>
+    <skos:definition xml:lang="es">Muestreador de plancton de alta velocidad.</skos:definition>
+    <skos:definition xml:lang="en">A high speed plankton sampler.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/NETT0109/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0667">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Termosalinógrafo Sea-Bird SBE 21</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Sea-Bird SBE 21 Thermosalinograph</skos:prefLabel>
+    <skos:definition xml:lang="es">Un sensor de conductividad de electrodo de platino y un termistor montados en una carcasa de plástico y titanio resistente a la corrosión, diseñado para ser conectado continuamente al suministro de agua de mar bombeada de una embarcación. El instrumento puede interconectarse con un sensor de temperatura remoto SBE 38 montado en el casco o en la entrada de agua de mar. Los datos se almacenan en la memoria interna y se envían a un puerto serie para su registro externo. La conductividad se mide en el rango de 0-7 S/m con una precisión de 0.001 S/m y una resolución de 0.0001 S/m. La temperatura de la carcasa se mide en el rango de -5 a 35 °C con una precisión de 0.01 °C y una resolución de 0.001 °C. La temperatura remota se mide en el rango de -5 a 35 °C con una precisión de 0.001 °C y una resolución de 0.0003 °C. Más información en http://www.seabird.com/products/spec_sheets/21data.htm.</skos:definition>
+    <skos:definition xml:lang="en">A platinum-electrode conductivity sensor and a thermistor mounted in a corrosion-resistant plastic and titanium housing designed to be continuously plumbed into a vessel's pumped seawater supply. The instrument may be interfaced to a remote SBE 38 temperature sensor mounted either on the hull or in the seawater inlet. Data are both stored in internal memory and output to a serial port for external logging. Conductivity is measured in the range 0-7 S/m with an accuracy of 0.001 S/m and a resolution of 0.0001 S/m. Housing temperature is measured in the range -5-35C with an accuracy of 0.01 C and a resolution of 0.001 C. Remote temperature is measured in the range -5-35C with an accuracy of 0.001 C and a resolution of 0.0003 C. More information at http://www.seabird.com/products/spec_sheets/21data.htm.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0667/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TSAL"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/HELGNET">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Heligoland</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Heligoland larval trawl net</skos:prefLabel>
+    <skos:definition xml:lang="es">Red de arrastre pequeña montada sobre un patín, utilizada para el muestreo de larvas de peces.</skos:definition>
+    <skos:definition xml:lang="en">A small sledge-mounted trawl net for sampling fish larvae.</skos:definition>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/NUNET">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Red de Neuston</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">neuston nets</skos:prefLabel>
+    <skos:definition xml:lang="es">Red de malla fina diseñada para recolectar organismos en o cerca de la superficie de la columna de agua.</skos:definition>
+    <skos:definition xml:lang="en">A fine-meshed net designed to collect small size organisms, aggregates, or litter on top of or close to the surface of a water column.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L05/current/69/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/NAQP400">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">ADCP Nortek Aquadopp Profiler 400 kHz</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Nortek Aquadopp Profiler 400 kHz ADCP</skos:prefLabel>
+    <skos:definition xml:lang="es">Un versátil Perfilador Acústico de Corrientes Doppler (ADCP) de 3 haces y 400 kHz, diseñado para mediciones de corrientes en un rango de hasta 90 metros. Integra sensores estándar de temperatura, compás e inclinación, y es adecuado para estudios de corrientes de marea, mediciones de flujo medio y para ser montado en boyas de superficie.</skos:definition>
+    <skos:definition xml:lang="en">A versatile 3-beam, 400 kHz Acoustic Doppler Current Profiler (ADCP) designed for current measurements with a range of up to 90 meters. It integrates standard sensors for temperature, compass, and tilt, and is suitable for tidal current studies, mean flow measurements, and for mounting on surface buoys.</skos:definition>
+    <skos:closeMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/TOOL0888/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CPROF"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL1177">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Box Corer</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Box corer</skos:prefLabel>
+    <skos:definition xml:lang="es">Muestreador de sedimento que recolecta una muestra cúbica de gran volumen y relativamente inalterada de la superficie del fondo marino.</skos:definition>
+    <skos:definition xml:lang="en">A sediment sampler that collects a large volume, relatively undisturbed box-shaped sample of the seafloor surface.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/TOOL1177/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/KMEC150">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">ADCP Kongsberg Maritime EC150-3C 150 kHz</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Kongsberg Maritime EC150-3C 150 kHz ADCP</skos:prefLabel>
+    <skos:definition xml:lang="es">Un instrumento combinado que funciona como ecosonda científica de haz dividido y como Perfilador Acústico de Corrientes Doppler (ADCP). Opera con una frecuencia nominal de 150 kHz y está diseñado para ser montado en buques o vehículos de superficie no tripulados (USV), integrándose completamente con el software EK80 para la recolección simultánea de datos.</skos:definition>
+    <skos:definition xml:lang="en">A combined instrument that functions as a wideband split-beam echosounder and an Acoustic Doppler Current Profiler (ADCP). It operates at a nominal frequency of 150 kHz and is designed for use on vessels and Unmanned Surface Vessels (USVs), fully integrating with EK80 software for simultaneous data collection.</skos:definition>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CPROF"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL1883">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">CTD Valeport MIDAS 606</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Valeport MIDAS 606 CTD</skos:prefLabel>
+    <skos:definition xml:lang="es">Un sensor de conductividad, temperatura y presión diseñado para trabajos de perfilado rápido y despliegue en fondeos. Mide conductividad (mS/cm), temperatura (ITS90, °C) y presión (bar), utilizando un sensor de conductividad de alta estabilidad, un termómetro de resistencia de platino (PRT) de respuesta rápida y un transductor de presión piezorresistivo compensado por temperatura. Todos los sensores están sincronizados para muestrear al mismo tiempo. Los sensores del CTD están encapsulados en titanio. El instrumento puede ser alimentado por cable o batería, permitiendo un muestreo autónomo o en tiempo real. Hay 5 modos de muestreo: continuo, ráfaga, viaje/perfil, condicional y retardo. El instrumento también está equipado con 16 MB de memoria FLASH no volátil de estado sólido. El CTD tiene una capacidad de profundidad de 6000 m, sin embargo, los rangos del sensor de presión son de 10, 50, 100, 300 o 600 bar con una resolución del 0.001 % y una precisión del 0.01 %. El sensor de conductividad tiene un rango de 0 - 80 mS/cm, resolución de 0.002 mS/cm y precisión de 0.01 mS/cm. El rango del sensor de temperatura es de -5 a 35 °C, con una resolución de 0.005 °C y una precisión de 0.01 °C.</skos:definition>
+    <skos:definition xml:lang="en">A conductivity, temperature, and pressure sensor designed for rapid profiling work and deployment on moorings. It measures conductivity (mS/cm), temperature (ITS90,deg C), and pressure (bar), using a high stability conductivity sensor, a fast response platinum resistance thermometer (PRT) temperature sensor, and a temperature compensated piezo-resistive pressure transducer. The sensors are all synchronised to sample at the same time. The CTD sensors are encased in titanium. The instrument can be powered by cable or battery, allowing for real-time or autonomous sampling. There are 5 sampling modes: continuous, burst, trip/profile, conditional, and delay. The instrument is also fitted with 16 MB of solid-state non-volatile FLASH memory. The CTD has a depth rating of 6000 m, however the pressure sensor ranges are 10, 50, 100, 300 or 600 bar with 0.001 % resolution and 0.01 % accuracy. The conductivity sensor has a range of 0 - 80 mS/cm, resolution of 0.002 mS/cm, and accuracy of 0.01 mS/cm. The temperature sensor range is -5 to 35 degC, with resolution 0.005 degC, and accuracy 0.01 degC.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL1883/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CTD"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/CMET">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Correntómetro</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Current meter</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento que mide la velocidad y dirección de la corriente a una sola profundidad</skos:definition>
+    <skos:definition xml:lang="en">Instrument that measures the speed and direction of the current at a single depth.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/114"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/BTL">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Botella</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Bottle</skos:prefLabel>
+    <skos:definition xml:lang="es">Dispositivo que recolecta una muestra de agua discreta in situ, desde cualquier profundidad, y la devuelve a la superficie sin contaminación por las aguas a través de las cuales pasa.</skos:definition>
+    <skos:definition xml:lang="en">Device that collects a discrete water sample in situ, from any depth, and returns it to the surface without contamination from the waters through which it passes.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/30"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/DSAMP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/MBES">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Ecosonda multi -haz</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Multi-beam echosounder</skos:prefLabel>
+    <skos:definition xml:lang="es">Sonda que emite ondas acústicas en forma de abanico debajo de su transductor</skos:definition>
+    <skos:definition xml:lang="en">Sounder that emits acoustic waves in a fan shape beneath its transducer.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/157"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0061">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">ADCP Teledyne RDI Workhorse Monitor de 300 kHz de lectura directa</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Teledyne RDI Workhorse Monitor 300 kHz direct-reading ADCP</skos:prefLabel>
+    <skos:definition xml:lang="es">Un perfilador acústico de corrientes Doppler (ADCP) de lectura directa con una capacidad de profundidad estándar de 200 m, con una carcasa opcional para 6000 m. El procesamiento de señal de banda ancha de 300 kHz proporciona una alta resolución de datos y una solución de cuatro haces que ofrece una medición independiente de la velocidad de error. Opera eficazmente entre temperaturas de -5 y 45 °C y tiene una precisión de velocidad del 0.5 % de la velocidad del agua +/- 0.5 cm/s.</skos:definition>
+    <skos:definition xml:lang="en">A direct reading acoustic doppler current profiler (ADCP) with a standard depth rating of 200 m with a 6000 m rated case available as an option. 300 kHz broadband signal processing gives high data resolution and a four-beam solution gives an independent error velocity measurement. It operates effectively between temperatures of -5 and 45 degC and has a velocity accuracy of 0.5 % of the water velocity +/- 0.5 cm/s.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/TOOL0061/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CPROF"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/PAIROVET">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Pairovet</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Pairovet net</skos:prefLabel>
+    <skos:definition xml:lang="es">Par de redes de plancton montadas en un armazón tipo bongo, utilizadas para arrastres verticales.</skos:definition>
+    <skos:definition xml:lang="en">A pair of plankton nets mounted on a bongo frame, used for vertical tows.</skos:definition>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/PGEAR">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Equipo de pesca pasiva</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Passive fishing gear</skos:prefLabel>
+    <skos:definition xml:lang="es">Dispositivos de pesca en los que la captura se basa en el movimiento de la especie objetivo hacia el arte (por ejemplo, nasas y trampas para peces).</skos:definition>
+    <skos:definition xml:lang="en">Fishing devices in which the capture is based on the movement of the target species towards the gear (e.g., pots and fish traps).</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/63"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TRAP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/DREDGE">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Rastra</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Dredge</skos:prefLabel>
+    <skos:definition xml:lang="es">Aparato remolcado sobre el fondo marino para recolectar organismos bentónicos o muestras de sedimento superficial.</skos:definition>
+    <skos:definition xml:lang="en">An apparatus towed along the seabed to collect benthic organisms or surface sediment samples.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/NETT0190/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/AGEAR"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/DGAS">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Sensor de gas disuelto</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Dissolved gas sensor</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento que mide la concentración de gases disueltos en el agua.</skos:definition>
+    <skos:definition xml:lang="en">Instrument that measures the concentration of dissolved gases in the water.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/351"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0047">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">CTD Sea-Bird SBE 19plus SEACAT</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Sea-Bird SBE 19plus SEACAT CTD</skos:prefLabel>
+    <skos:definition xml:lang="es">Perfilador CTD autónomo y autoalimentado. Mide conductividad, temperatura y presión tanto en modo de perfilado (muestrea a 4 barridos/seg) como en modo de fondeo (tasas de muestreo desde una vez cada 5 segundos hasta una vez cada 9 horas). Disponible en carcasa de plástico o titanio con rangos de profundidad de 600 m y 7000 m respectivamente. Una bomba sumergible en miniatura suministra agua a la celda de conductividad.</skos:definition>
+    <skos:definition xml:lang="en">Self contained self powered CTD profiler. Measures conductivity, temperature and pressure in both profiling (samples at 4 scans/sec) and moored (sample rates of once every 5 seconds to once every 9 hours) mode. Available in plastic or titanium housing with depth ranges of 600m and 7000m respectively. Minature submersible pump provides water to conductivity cell.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0047/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CTD"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/NETT0176">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Red Bongo</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Bongo nets</skos:prefLabel>
+    <skos:definition xml:lang="es">Dos redes de plancton montadas una al lado de la otra, utilizadas para muestrear dos tamaños de malla simultáneamente.</skos:definition>
+    <skos:definition xml:lang="en">Paired plankton nets mounted side-by-side used to sample two mesh sizes simultaneously.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/NETT0176/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0062">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">ADCP Teledyne RDI de 150 kHz de banda estrecha montado en buque</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Teledyne RDI 150 kHz narrowband vessel-mounted ADCP</skos:prefLabel>
+    <skos:definition xml:lang="es">El Perfilador Acústico de Corrientes Doppler (ADCP) de Banda Estrecha Montado en Buque de Teledyne RDI es un ADCP de perfilado de corrientes 3D de largo alcance, diseñado para el perfilado continuo de corrientes desde una embarcación en movimiento. Cuenta con un procesamiento de señal de banda estrecha de 150 kHz y un diseño patentado de 4 haces</skos:definition>
+    <skos:definition xml:lang="en">The Teledyne RDI Narrowband Vessel-Mounted Acoustic Doppler Current Profiler is a long-range 3D current profiling ADCP designed for continuous current profiling from a moving ship. It has 150 kHz narrowband signal processing and a patented 4 beam design.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/TOOL0062/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CPROF"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/BUCKT">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Balde</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Bucket</skos:prefLabel>
+    <skos:definition xml:lang="es">Recipiente simple utilizado para recolectar manualmente una muestra de agua de la superficie.</skos:definition>
+    <skos:definition xml:lang="en">A simple container used to manually collect a surface water sample.</skos:definition>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/DSAMP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/POT">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Nasa</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Pot / Creel</skos:prefLabel>
+    <skos:definition xml:lang="es">Tipo de trampa, generalmente una jaula o cesta con una o más entradas cónicas, utilizada para capturar crustáceos o peces.</skos:definition>
+    <skos:definition xml:lang="en">A type of trap, typically a cage or basket with one or more conical entrances, used to capture crustaceans or fish.</skos:definition>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TRAP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0040">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">CTD Sea-Bird SBE 25 Sealogger</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Sea-Bird SBE 25 Sealogger CTD</skos:prefLabel>
+    <skos:definition xml:lang="es">Un CTD compacto y autónomo que comprende un sensor de conductividad conectado a un suministro de agua bombeada y módulos de sensores de presión y temperatura separados. La unidad completa está montada en una jaula de acero inoxidable con un paquete de baterías, registrador de datos y memoria. Se puede conectar un sensor de oxígeno disuelto al suministro de agua bombeada y se pueden montar otros módulos de sensores, como fluorómetros y transmisómetros, en la jaula e interconectarlos con el registrador de datos. El instrumento también puede utilizarse con alimentación externa y registro de datos a través de una interfaz RS-232.</skos:definition>
+    <skos:definition xml:lang="en">A compact self-contained CTD comprising a conductivity sensor plumbed into a pumped water supply and separate pressure and temperature sensor modules. The whole unit is mounted in a stainless steel cage with a battery pack, data logger and memory. A dissolved oxygen sensor may be plumbed into the pumped water supply and other sensor modules such as fluorometers and transmissometers may be mounted in the cage and interfaced to the data logger. The instrument may also be used with external power and data logging through an RS-232 interface.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0040/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CTD"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/SBES">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Ecosonda mono-haz</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Single-beam echosounder</skos:prefLabel>
+    <skos:definition xml:lang="es">Sonda que emite ondas acústicas en un solo punto, cronometrando pulsos de sonido reflejados en el lecho marino.</skos:definition>
+    <skos:definition xml:lang="en">Sounder that emits acoustic waves at a single point, timing sound pulses reflected off the seabed.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/156"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/RADM">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Radiómetro</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Radiometer</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento que mide la intensidad de la radiación electromagnética en la atmósfera o en la columna de agua.</skos:definition>
+    <skos:definition xml:lang="en">Instrument that measures the intensity of electromagnetic radiation in the atmosphere or in the water column.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/122"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0002">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">CTD Neil Brown MK3</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Neil Brown MK3 CTD</skos:prefLabel>
+    <skos:definition xml:lang="es">El CTD Neil Brown MK3 consiste en una unidad integral que contiene sensores de presión, temperatura y conductividad con un sensor de oxígeno disuelto opcional en una carcasa resistente a la presión. La variante más utilizada en las décadas de 1980 y 1990 fue el MK3B. El MK3C, equipado con un sensor de presión mejorado para reducir la histéresis, fue desarrollado para cumplir con los requisitos del proyecto WOCE. El instrumento ya no se produce, pero General Oceanics ofrece soporte (reparación y calibración).</skos:definition>
+    <skos:definition xml:lang="en">The Neil Brown MK3 CTD consists of an integral unit containing pressure, temperature and conductivity sensors with an optional dissolved oxygen sensor in a pressure-hardened casing. The most widely used variant in the 1980s and 1990s was the MK3B. The MK3C fitted with an improved pressure sensor to reduce hysteresis was developed to meet the requirements of the WOCE project. The instrument is no longer in production, but is supported (repair and calibration) by General Oceanics.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0002/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CTD"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/FLOWCAM">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Flow-Cam</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Flow-Cam</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento que combina citometría de flujo y microscopía para obtener imágenes y analizar partículas en una muestra de fluido.</skos:definition>
+    <skos:definition xml:lang="en">An instrument combining flow cytometry and microscopy to image and analyze particles in a fluid sample.</skos:definition>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0190">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Termosalinógrafo Sea-Bird SBE 45 MicroTSG</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Sea-Bird SBE 45 MicroTSG thermosalinograph</skos:prefLabel>
+    <skos:definition xml:lang="es">Un instrumento pequeño, de alta precisión y alimentado externamente, diseñado para la determinación a bordo de la conductividad y temperatura de la superficie del mar (agua bombeada). Está construido en plástico y titanio para asegurar una larga vida útil con un mantenimiento mínimo. Opcionalmente, puede interconectarse con un sensor de temperatura de casco externo SBE 38.</skos:definition>
+    <skos:definition xml:lang="en">A small externally powered, high-accuracy instrument, designed for shipboard determination of sea surface (pumped-water) conductivity and temperature. It is constructed of plastic and titanium to ensure long life with minimum maintenance. It may optionally be interfaced to an external SBE 38 hull temperature sensor.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0190/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TSAL"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL1853">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Draga</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Dredge</skos:prefLabel>
+    <skos:definition xml:lang="es">Un tipo de muestreador diseñado para recolectar una muestra del sustrato del fondo, generalmente remolcándolo a través del sustrato. Puede ser adecuado para sustratos de lodo, arena, conchilla y grava. Las muestras pueden utilizarse para estudiar macroinvertebrados bentónicos y algas, así como la química y estructura de los propios sedimentos.</skos:definition>
+    <skos:definition xml:lang="en">A type of sampler designed for collecting a sample of bottom substrate, usually by towing it through the substrate. It can be suitable for mud, sand, shell, and gravel substrates. Samples can be used to study benthic macroinvertebrates and algae as well as the chemistry and structure of the sediments themselves.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/TOOL1853/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/PNETS">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Redes de plankton</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Plankton nets</skos:prefLabel>
+    <skos:definition xml:lang="es">Red de malla fina diseñada para recolectar organismos u objetos de tamaño pequeño, en la columna de agua (ej. microzooplancton, mesozooplancton, necton, microplásticos u otros desechos).</skos:definition>
+    <skos:definition xml:lang="en">Fine mesh net designed to collect small organisms or objects in the water column (e.g., microzooplankton, mesozooplankton, nekton, microplastics or other debris).</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/22"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/NET"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/HELGNET"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/NETT0054"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/MNET"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/NETT0071"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PAIROVET"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/NETT0024"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/NUNET"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/NETT0176"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/NETT0109"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0994"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PHYTONET"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0042">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">CTD Sea-Bird SBE 19 SEACAT</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Sea-Bird SBE 19 SEACAT CTD</skos:prefLabel>
+    <skos:definition xml:lang="es">Un CTD autónomo alimentado por batería con un sensor de presión de galga extensiométrica de semiconductor de precisión. El agua era suministrada al sensor de conductividad mediante una bomba. La carcasa era de plástico (hasta 600 m de profundidad), aluminio (hasta 6800 m de profundidad) o titanio (hasta 10500 m de profundidad). Se podían instalar sensores opcionales de oxígeno, pH, fluorescencia, PAR, transmisión de luz y turbidez. Diseñado principalmente para aplicaciones de perfilado, pero puede ser utilizado en fondeos de corta duración (menos de 2 semanas). Reemplazado por el modelo SBE19plus en 2001.</skos:definition>
+    <skos:definition xml:lang="en">A self-contained battery powered CTD with precision semiconductor strain gauge pressure sensor. Water was supplied to the conductivity sensor by a pump. Housing was plastic (up to 600m depth), aluminium (up to 6800m depth) or titanium (up to 10500m depth). Optional oxygen, pH, fluorescence, PAR, light transmission and turbidity sensors could be fitted. Primarily designed for profiling applications but may be used on a short (less than 2 weeks) duration mooring. Replaced by the SBE19plus model in 2001.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0042/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CTD"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/FISHNET">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Redes de pesca</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Fishing nets</skos:prefLabel>
+    <skos:definition xml:lang="es">Término general para cualquier tipo de red utilizada en la actividad pesquera.</skos:definition>
+    <skos:definition xml:lang="en">General term for any type of net used in fishing activities.</skos:definition>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/NET"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL1574"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/JIG"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/BOTTRWL"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/SNETS"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PTNET"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/SALIN">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Sensor de salinidad</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Salinity sensor</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento que mide simultáneamente la conductividad eléctrica y la temperatura en la columna de agua para proporcionar datos de salinidad.</skos:definition>
+    <skos:definition xml:lang="en">Instrument that simultaneously measures electrical conductivity and temperature in the water column to provide salinity data.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/350"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/STRAP">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Trampa de sedimentos</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">sediment traps</skos:prefLabel>
+    <skos:definition xml:lang="es">Un colector de partículas a medida que se hunden a través de la columna de agua.</skos:definition>
+    <skos:definition xml:lang="en">A collector of particulates as they sink through the water column.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L05/current/33/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL1574">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Palangre de fondo</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">bottom longlines</skos:prefLabel>
+    <skos:definition xml:lang="es">Arte de pesca pasivo que consiste en una línea principal anclada al fondo de la que penden múltiples anzuelos cebados.</skos:definition>
+    <skos:definition xml:lang="en">A passive fishing gear consisting of a main line anchored to the bottom from which multiple baited hooks are suspended.</skos:definition>
+    <skos:exactMatch rdf:resource="https://vocab.nerc.ac.uk/collection/L22/current/TOOL1574/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/FISHNET"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL1162">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">CTD Sea-Bird SBE 25plus Sealogger</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Sea-Bird SBE 25plus Sealogger CTD</skos:prefLabel>
+    <skos:definition xml:lang="es">Un CTD compacto y autónomo alimentado por batería para uso en despliegues costeros, estuarinos y de aguas profundas para medir la temperatura y la conductividad con la profundidad. La unidad completa está montada en una jaula de acero inoxidable con paquete de baterías, registrador de datos y memoria interna. El 25plus comprende un sensor de temperatura SBE 3F, un sensor de conductividad SBE 4C y un sensor de presión de galga extensiométrica. Utiliza un flujo conducido T-C controlado por bomba para minimizar los picos de salinidad. El instrumento también puede utilizarse con alimentación externa y registro de datos a través de una interfaz RS-232, y ofrece canales para hasta diez sensores auxiliares como oxígeno, pH, fluorescencia, PAR, turbidez, transmisión de luz y nitratos. El 25plus muestrea a 16 Hz y es adecuado para su uso en profundidades de agua que van desde 600 a 6800 m. El SBE 25plus reemplaza al SBE 25 que fue descontinuado en 2012.</skos:definition>
+    <skos:definition xml:lang="en">A compact and self-contained battery-powered CTD for use in coastal, estuarine and deep-water deployments to measure temperature and conductivity with depth. The whole unit is mounted in a stainless steel cage with battery pack, data logger and internal memory. The 25plus comprises an SBE 3F temperature sensor, SBE 4C conductivity sensor, and a strain-gauge pressure sensor. It utilises pump-controlled T-C ducted flow to minimise salinity spiking. The instrument may also be used with external power and data logging through an RS-232 interface, and offers channels for up to ten auxiliary sensors such as oxygen, pH, fluorescence, PAR, turbidity, light transmission and nitrates. The 25plus samples at 16 Hz and is suitable for use in water depths ranging from 600-6800 m. The SBE 25plus replaces the SBE 25 which was discontinued in 2012.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL1162/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CTD"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TOOL0058">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">CTD Sea-Bird SBE 911plus</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Sea-Bird SBE 911plus CTD</skos:prefLabel>
+    <skos:definition xml:lang="es">CTD de alta precisión y exactitud que comprende una unidad submarina SBE 9plus (sensores de temperatura SBE 3 y de conductividad SBE 4) y una unidad de cubierta SBE 11plus. Los sensores pueden conectarse a un circuito de tuberías de plástico alimentado por bomba (generalmente temperatura, salinidad y oxígeno) o ser autónomos. Todos los instrumentos (8 canales disponibles) en el paquete son registrados por el SBE 11. La unidad es la versión de producción comercial del SBE 911 (cada 911 se construía a medida según especificaciones individuales).</skos:definition>
+    <skos:definition xml:lang="en">High precision and accuracy CTD comprising an SBE 9plus underwater unit (SBE 3 temperature and SBE 4 conductivity sensors) and an SBE 11plus deck unit. Sensors may be connected to a pump-fed plastic tubing circuit (usually temperature, salinity and oxygen) or stand-alone. All instruments (8 channels available) on the package are logged by the SBE 11. The unit is the production off the shelf version of the SBE 911 (each 911 was custom built to individual specification).</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0058/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/CTD"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/TEMP">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Sensor de temperatura</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Temperature sensor</skos:prefLabel>
+    <skos:definition xml:lang="es">Instrumento que mide la temperatura del agua con la que está en contacto.</skos:definition>
+    <skos:definition xml:lang="en">Instrument that measures the temperature of the water with which it is in contact.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/134"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0191"/>
+    <skos:narrower rdf:resource="https://vocab.inidep.edu.ar/muestreadores/TOOL0267"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/ROSETTE">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Roseta</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Rosette sampler</skos:prefLabel>
+    <skos:definition xml:lang="es">Estructura que soporta un conjunto de botellas de muestreo y un CTD, permitiendo la recolección de muestras de agua a profundidades específicas.</skos:definition>
+    <skos:definition xml:lang="en">A frame supporting a set of sampling bottles and a CTD, allowing the collection of water samples at specific depths.</skos:definition>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/PHYTONET">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Red de Fitoplancton</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Phytoplankton net</skos:prefLabel>
+    <skos:definition xml:lang="es">Red de malla muy fina (típicamente 20-80 micrómetros) diseñada para recolectar las células de fitoplancton más grandes de la columna de agua.</skos:definition>
+    <skos:definition xml:lang="en">A very fine mesh net (typically 20-80 micrometers) designed to collect larger phytoplankton cells from the water column.</skos:definition>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/PNETS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/BOTTRWL">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Red de arrastre de fondo</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Bottom trawl net</skos:prefLabel>
+    <skos:definition xml:lang="es">Red en forma de cono remolcada sobre el fondo marino para capturar especies demersales. Incluye redes de vara y redes de puertas.</skos:definition>
+    <skos:definition xml:lang="en">A cone-shaped net towed along the seabed to capture demersal species. Includes beam trawls and otter trawls.</skos:definition>
+    <skos:altLabel xml:lang="en">Demersal trawl</skos:altLabel>
+    <skos:closeMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/61/"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+    <skos:broader rdf:resource="https://vocab.inidep.edu.ar/muestreadores/FISHNET"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://vocab.inidep.edu.ar/muestreadores/HYDRO">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://vocab.inidep.edu.ar/muestreadores/"/>
+    <skos:prefLabel xml:lang="es">Hidrófono</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Hydrophone</skos:prefLabel>
+    <skos:definition xml:lang="es">Dispositivos que convierten las ondas de sonido bajo el agua en señales eléctricas con el fin de detectar la presencia y dirección de naves y/o ciertos animales</skos:definition>
+    <skos:definition xml:lang="en">Devices that convert underwater sound waves into electrical signals in order to detect the presence and direction of ships and/or certain animals.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/369"/>
+    <dc:source>Gabinete de oceanografía fisica, INIDEP.</dc:source>
+  </rdf:Description>
+</rdf:RDF>

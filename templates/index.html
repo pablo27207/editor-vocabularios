@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center py-10">
+    <h1 class="text-4xl font-bold mb-4 text-blue-800 dark:text-blue-400">Vocabularios Controlados</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">Gestión y visualización de vocabularios oceanográficos
+        (SKOS).</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for vocab in vocabularies %}
+        <div
+            class="bg-white dark:bg-neutral-800 p-6 border border-gray-200 dark:border-neutral-700 shadow-sm hover:shadow-md transition-shadow rounded-sm">
+            <h2 class="text-xl font-semibold mb-2 text-slate-800 dark:text-slate-100">{{ vocab.name }}</h2>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">{{ vocab.description[:100] }}...</p>
+            <a href="{{ url_for('vocab.view_vocab', vocab_id=vocab.id) }}"
+                class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white font-medium hover:underline">Ver
+                Vocabulario &rarr;</a>
+        </div>
+        {% else %}
+        <div class="col-span-3 text-center text-gray-500 dark:text-gray-400">
+            <p>No hay vocabularios cargados. Ejecuta <code>flask import-rdf</code>.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
