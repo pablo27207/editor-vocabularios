@@ -7,8 +7,65 @@
     <p class="text-gray-600 dark:text-gray-400">{{ vocab.description }}</p>
 </div>
 
+<!-- Tree View -->
+<div
+    class="bg-white dark:bg-neutral-800 shadow-sm border border-gray-200 dark:border-neutral-700 rounded-sm overflow-hidden mb-6">
+    <div
+        class="p-4 border-b border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-900 flex justify-between items-center">
+        <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-100">Jerarquía</h2>
+        <button onclick="document.getElementById('tree-view').classList.toggle('hidden');"
+            class="text-sm text-blue-600 dark:text-blue-400 hover:underline">Alternar Vista</button>
+    </div>
+    <div id="tree-view" class="p-4">
+        {% macro render_tree(term_list) %}
+        <ul class="pl-4 border-l border-gray-200 dark:border-neutral-700 ml-2">
+            {% for term in term_list %}
+            <li class="mb-1">
+                <div class="flex items-center group">
+                    {% if children_map[term.concept_id] %}
+                    <details class="w-full">
+                        <summary
+                            class="cursor-pointer list-none flex items-center hover:bg-gray-100 dark:hover:bg-neutral-700 p-1 rounded-sm">
+                            <span class="mr-2 text-gray-400 text-xs">▶</span>
+                            <span class="font-medium text-slate-700 dark:text-slate-200 mr-2">{{ term.concept_id
+                                }}</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 lang-es">{{ term.pref_label_es
+                                }}</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 lang-en">{{ term.pref_label_en
+                                }}</span>
+                            <a href="#term-{{ term.id }}"
+                                class="ml-auto text-xs text-blue-500 opacity-0 group-hover:opacity-100 hover:underline">Ir
+                                a detalle</a>
+                        </summary>
+                        {{ render_tree(children_map[term.concept_id]) }}
+                    </details>
+                    {% else %}
+                    <div class="flex items-center w-full p-1 hover:bg-gray-100 dark:hover:bg-neutral-700 rounded-sm">
+                        <span class="w-4 mr-2"></span> <!-- Spacer for alignment -->
+                        <span class="font-medium text-slate-700 dark:text-slate-200 mr-2">{{ term.concept_id }}</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-400 lang-es">{{ term.pref_label_es }}</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-400 lang-en">{{ term.pref_label_en }}</span>
+                        <a href="#term-{{ term.id }}"
+                            class="ml-auto text-xs text-blue-500 opacity-0 group-hover:opacity-100 hover:underline">Ir a
+                            detalle</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endmacro %}
+
+        {{ render_tree(roots) }}
+    </div>
+</div>
+
+<!-- List View -->
 <div
     class="bg-white dark:bg-neutral-800 shadow-sm border border-gray-200 dark:border-neutral-700 rounded-sm overflow-hidden">
+    <div class="p-4 border-b border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-900">
+        <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-100">Lista Plana</h2>
+    </div>
     <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
         <thead class="bg-gray-50 dark:bg-neutral-900">
             <tr>
@@ -17,13 +74,19 @@
                     ID</th>
                 <th
                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                    Etiqueta (ES)</th>
+                    <span class="lang-es">Etiqueta (ES)</span>
+                    <span class="lang-en">Label (EN)</span>
+                </th>
                 <th
                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                    Definición (ES)</th>
+                    <span class="lang-es">Definición (ES)</span>
+                    <span class="lang-en">Definition (EN)</span>
+                </th>
                 <th
                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                    Acciones</th>
+                    <span class="lang-es">Acciones</span>
+                    <span class="lang-en">Actions</span>
+                </th>
             </tr>
         </thead>
         <tbody class="bg-white dark:bg-neutral-800 divide-y divide-gray-200 dark:divide-neutral-700">
@@ -33,5 +96,4 @@
         </tbody>
     </table>
 </div>
-
 {% endblock %}

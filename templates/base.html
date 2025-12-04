@@ -21,7 +21,14 @@
         }
     </script>
     <style>
-        /* Custom scrollbar for dark mode if needed */
+        /* Language Visibility Logic */
+        html[lang="es"] .lang-en {
+            display: none !important;
+        }
+
+        html[lang="en"] .lang-es {
+            display: none !important;
+        }
     </style>
 </head>
 
@@ -33,6 +40,12 @@
             <div class="flex items-center gap-4">
                 <!-- Auth Placeholder -->
                 <span class="text-sm text-slate-300">Invitado</span>
+
+                <!-- Language Toggle -->
+                <button id="lang-toggle"
+                    class="px-2 py-1 text-xs font-bold rounded border border-slate-600 hover:bg-slate-700 focus:outline-none transition-colors">
+                    ES
+                </button>
 
                 <!-- Theme Toggle -->
                 <button id="theme-toggle" class="p-2 rounded-sm hover:bg-slate-700 focus:outline-none">
@@ -61,6 +74,22 @@
     </footer>
 
     <script>
+        // Language Logic
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const htmlTag = document.documentElement;
+
+        // Init Lang
+        const currentLang = localStorage.getItem('language') || 'es';
+        htmlTag.setAttribute('lang', currentLang);
+        langToggleBtn.textContent = currentLang.toUpperCase();
+
+        langToggleBtn.addEventListener('click', () => {
+            const newLang = htmlTag.getAttribute('lang') === 'es' ? 'en' : 'es';
+            htmlTag.setAttribute('lang', newLang);
+            localStorage.setItem('language', newLang);
+            langToggleBtn.textContent = newLang.toUpperCase();
+        });
+
         // Dark Mode Logic
         var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

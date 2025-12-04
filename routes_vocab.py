@@ -10,9 +10,30 @@ def view_vocab(vocab_id):
     vocab = Vocabulary.query.get_or_404(vocab_id)
     terms = Term.query.filter_by(vocab_id=vocab_id).order_by(Term.concept_id).all()
     
+    # Build Tree Structure
+    term_map = {t.concept_id: t for t in terms}
+    children_map = {t.concept_id: [] for t in terms}
+    roots = []
+    
+    for term in terms:
+        has_parent = False
+        if term.broader:
+            for parent_id in term.broader:
+                if parent_id in term_map:
+                    children_map[parent_id].append(term)
+                    has_parent = True
+        
+        if not has_parent:
+            roots.append(term)
+            
+    # Sort roots and children by concept_id
+    roots.sort(key=lambda x: x.concept_id)
+    for parent_id in children_map:
+        children_map[parent_id].sort(key=lambda x: x.concept_id)
+    
     user_role = session.get('user_role', 'viewer')
     
-    return render_template('vocab_editor.html', vocab=vocab, terms=terms, user_role=user_role)
+    return render_template('vocab_editor.html', vocab=vocab, terms=terms, roots=roots, children_map=children_map, user_role=user_role)
 
 @vocab_bp.route('/term/<int:term_id>/edit', methods=['GET'])
 @login_required
@@ -39,13 +60,7 @@ def update_term(term_id):
         'pref_label_en': pref_label_en,
         'definition_es': definition_es,
         'definition_en': definition_en,
-        # Add other fields as needed
     }
-    
-    # If Admin/Reviewer, update directly (optional, or force workflow?)
-    # User said "Admin reviews", so let's stick to workflow for everyone or just non-admins?
-    # Let's make it so everyone creates a request for now to be safe, or Admins bypass.
-    # "Sugerir ediciones (que luego deban ser aprobados...)"
     
     if user_role in ['admin', 'reviewer']:
         # Direct update
