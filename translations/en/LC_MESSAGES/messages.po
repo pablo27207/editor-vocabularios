@@ -1,0 +1,276 @@
+# English translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-12-06 00:00+0000\n"
+"PO-Revision-Date: 2025-12-05 23:58+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/base.html:7 templates/base.html:72
+msgid "Editor de Vocabularios Oceanográficos"
+msgstr "Oceanographic Vocabulary Editor"
+
+#: templates/base.html:35
+msgid "Salir"
+msgstr "Logout"
+
+#: templates/base.html:38 templates/login.html:45
+msgid "Entrar"
+msgstr "Login"
+
+#: templates/base.html:40
+msgid "Registro"
+msgstr "Register"
+
+#: templates/index.html:5
+msgid "Vocabularios controlados"
+msgstr "Controlled Vocabularies"
+
+#: templates/index.html:6
+msgid ""
+"Gestión y visualización de vocabularios\n"
+"        oceanográficos (SKOS)."
+msgstr "Management and visualization of oceanographic vocabularies (SKOS)."
+
+#: templates/index.html:17
+msgid "Ver vocabulario"
+msgstr "View vocabulary"
+
+#: templates/index.html:21
+msgid "No hay vocabularios cargados. Ejecuta"
+msgstr "No vocabularies loaded. Run"
+
+#: templates/login.html:6
+msgid "Iniciar sesión"
+msgstr "Sign In"
+
+#: templates/login.html:27 templates/register.html:58
+msgid "Contraseña"
+msgstr "Password"
+
+#: templates/login.html:49
+msgid "¿No tienes cuenta?"
+msgstr "Don't have an account?"
+
+#: templates/login.html:51
+msgid "Regístrate aquí"
+msgstr "Register here"
+
+#: templates/register.html:6
+msgid "Crear cuenta"
+msgstr "Create Account"
+
+#: templates/register.html:23
+msgid "Nombre"
+msgstr "First Name"
+
+#: templates/register.html:29
+msgid "Apellido"
+msgstr "Last Name"
+
+#: templates/register.html:43
+msgid "Organización"
+msgstr "Organization"
+
+#: templates/register.html:50
+msgid "Contacto (opcional)"
+msgstr "Contact (optional)"
+
+#: templates/register.html:51
+msgid "Teléfono, LinkedIn, etc."
+msgstr "Phone, LinkedIn, etc."
+
+#: templates/register.html:72
+msgid ""
+"Min. 8 caracteres, 1 mayúscula, 1\n"
+"                    número/símbolo."
+msgstr "Min. 8 chars, 1 uppercase, 1 number/symbol."
+
+#: templates/register.html:77
+msgid "Confirmar"
+msgstr "Confirm"
+
+#: templates/register.html:97
+msgid "Registrarse"
+msgstr "Sign Up"
+
+#: templates/register.html:101
+msgid "¿Ya tienes cuenta?"
+msgstr "Already have an account?"
+
+#: templates/register.html:103
+msgid "Ingresa aquí"
+msgstr "Login here"
+
+#: templates/vocab_editor.html:5
+msgid "Volver"
+msgstr "Back"
+
+#: templates/vocab_editor.html:15
+msgid "Jerarquía"
+msgstr "Hierarchy"
+
+#: templates/vocab_editor.html:17
+msgid "Alternar vista"
+msgstr "Toggle View"
+
+#: templates/vocab_editor.html:42 templates/vocab_editor.html:60
+msgid "Ir a detalle"
+msgstr "Go to detail"
+
+#: templates/vocab_editor.html:77
+msgid "Lista plana"
+msgstr "Flat List"
+
+#: templates/vocab_editor.html:87
+msgid "Etiqueta (ES)"
+msgstr "Label (ES)"
+
+#: templates/vocab_editor.html:87
+msgid "Etiqueta (EN)"
+msgstr "Label (EN)"
+
+#: templates/vocab_editor.html:91
+msgid "Definición (ES)"
+msgstr "Definition (ES)"
+
+#: templates/vocab_editor.html:91
+msgid "Definición (EN)"
+msgstr "Definition (EN)"
+
+#: templates/vocab_editor.html:95
+msgid "Acciones"
+msgstr "Actions"
+
+#: admin panel
+msgid "Revisión"
+msgstr "Review"
+
+msgid "Usuarios"
+msgstr "Users"
+
+msgid "Revisión de Cambios"
+msgstr "Change Review"
+
+msgid "Cambios sugeridos pendientes de aprobación."
+msgstr "Suggested changes pending approval."
+
+msgid "Mi Perfil"
+msgstr "My Profile"
+
+#: admin_users.html
+msgid "Gestión de Usuarios"
+msgstr "User Management"
+
+msgid "Administra roles y permisos de usuarios."
+msgstr "Manage user roles and permissions."
+
+msgid "Volver al panel de administración"
+msgstr "Back to admin panel"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Rol Actual"
+msgstr "Current Role"
+
+msgid "Registrado"
+msgstr "Registered"
+
+msgid "Guardar"
+msgstr "Save"
+
+msgid "No hay usuarios registrados."
+msgstr "No registered users."
+
+msgid "Crear Nuevo Usuario"
+msgstr "Create New User"
+
+msgid "Rol"
+msgstr "Role"
+
+msgid "Crear Usuario"
+msgstr "Create User"
+
+msgid "Descripción de Roles"
+msgstr "Role Descriptions"
+
+msgid "Acceso total, gestión de usuarios y aprobación de cambios."
+msgstr "Full access, user management and change approval."
+
+msgid "Puede aprobar/rechazar cambios y editar términos directamente."
+msgstr "Can approve/reject changes and edit terms directly."
+
+msgid "Puede proponer cambios que requieren aprobación."
+msgstr "Can propose changes that require approval."
+
+msgid "Solo puede ver vocabularios (rol por defecto)."
+msgstr "Can only view vocabularies (default role)."
+
+#: profile.html
+msgid "El email no puede ser modificado."
+msgstr "Email cannot be modified."
+
+msgid "El rol es asignado por un administrador."
+msgstr "Role is assigned by an administrator."
+
+msgid "Contacto"
+msgstr "Contact"
+
+msgid "Teléfono, ORCID, etc."
+msgstr "Phone, ORCID, etc."
+
+msgid "Cambiar Contraseña"
+msgstr "Change Password"
+
+msgid "Dejá en blanco si no querés cambiar la contraseña."
+msgstr "Leave blank if you don't want to change the password."
+
+msgid "Nueva Contraseña"
+msgstr "New Password"
+
+msgid "Mínimo 8 caracteres, 1 mayúscula, 1 número o símbolo."
+msgstr "Min. 8 characters, 1 uppercase, 1 number or symbol."
+
+msgid "Confirmar Contraseña"
+msgstr "Confirm Password"
+
+msgid "Guardar Cambios"
+msgstr "Save Changes"
+
+msgid "Registrado el"
+msgstr "Registered on"
+
+#: admin.html
+msgid "Fecha"
+msgstr "Date"
+
+msgid "Usuario"
+msgstr "User"
+
+msgid "Vocabulario"
+msgstr "Vocabulary"
+
+msgid "Cambio"
+msgstr "Change"
+
+msgid "Aprobar"
+msgstr "Approve"
+
+msgid "Rechazar"
+msgstr "Reject"
+
+msgid "No hay cambios pendientes."
+msgstr "No pending changes."

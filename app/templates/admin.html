@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-3xl font-bold mt-2 text-slate-800 dark:text-white">{{ _('Revisión de Cambios') }}</h1>
+    <p class="text-gray-600 dark:text-gray-400">{{ _('Cambios sugeridos pendientes de aprobación.') }}</p>
+</div>
+
+<div class="panel-container">
+    <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+        <thead class="bg-gray-50 dark:bg-neutral-900">
+            <tr>
+                <th class="table-header-cell">
+                    {{ _('Fecha') }}
+                </th>
+                <th class="table-header-cell">
+                    {{ _('Usuario') }}
+                </th>
+                <th class="table-header-cell">
+                    {{ _('Vocabulario') }}
+                </th>
+                <th class="table-header-cell">
+                    {{ _('Cambio') }}
+                </th>
+                <th class="table-header-cell">
+                    {{ _('Acciones') }}
+                </th>
+            </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-neutral-800 divide-y divide-gray-200 dark:divide-neutral-700">
+            {% for req in requests %}
+            <tr>
+                <td class="table-cell">
+                    {{ req.created_at.strftime('%Y-%m-%d %H:%M') }}
+                </td>
+                <td class="table-cell text-gray-900 dark:text-gray-100">
+                    User #{{ req.user_id }}
+                </td>
+                <td class="table-cell">
+                    Vocab #{{ req.vocab_id }}
+                </td>
+                <td class="table-cell">
+                    <pre
+                        class="text-xs bg-gray-100 dark:bg-neutral-900 p-2 rounded-sm overflow-x-auto">{{ req.proposed_data | tojson(indent=2) }}</pre>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <form action="{{ url_for('admin.approve_request', req_id=req.id) }}" method="POST" class="inline">
+                        <button type="submit"
+                            class="mr-2 text-green-600 dark:text-green-400 hover:text-green-900 dark:hover:text-green-300 hover:underline font-medium">
+                            {{ _('Aprobar') }}
+                        </button>
+                    </form>
+                    <form action="{{ url_for('admin.reject_request', req_id=req.id) }}" method="POST" class="inline">
+                        <button type="submit"
+                            class="text-red-600 dark:text-red-400 hover:text-red-900 dark:hover:text-red-300 hover:underline font-medium">
+                            {{ _('Rechazar') }}
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5" class="px-6 py-4 text-center text-gray-500 dark:text-gray-400">{{ _('No hay cambios
+                    pendientes.') }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto card mt-10">
+    <h1 class="card-title">{{ _('Crear cuenta') }}</h1>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert-error" role="alert">
+        {% for message in messages %}
+        <span class="block sm:inline">{{ message }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('auth.register') }}">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+                <label for="name" class="form-label">{{ _('Nombre') }}</label>
+                <input type="text" name="name" id="name" required class="form-input">
+            </div>
+            <div>
+                <label for="last_name" class="form-label">{{ _('Apellido') }}</label>
+                <input type="text" name="last_name" id="last_name" required class="form-input">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" id="email" required class="form-input">
+        </div>
+
+        <div class="form-group">
+            <label for="organization" class="form-label">{{ _('Organización') }}</label>
+            <input type="text" name="organization" id="organization" required class="form-input">
+        </div>
+
+        <div class="form-group">
+            <label for="contact" class="form-label">{{ _('Contacto (opcional)') }}</label>
+            <input type="text" name="contact" id="contact" placeholder="{{ _('Teléfono, LinkedIn, etc.') }}"
+                class="form-input">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="relative">
+                <label for="password" class="form-label">{{ _('Contraseña') }}</label>
+                <div class="relative">
+                    <input type="password" name="password" id="password" required class="form-input pr-10">
+                    <button type="button" onclick="togglePassword('password', 'eye-icon-1')"
+                        class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none">
+                        <svg id="eye-icon-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+                <p class="form-text">{{ _('Min. 8 caracteres, 1 mayúscula, 1 número/símbolo.') }}</p>
+            </div>
+            <div class="relative">
+                <label for="confirm_password" class="form-label">{{ _('Confirmar') }}</label>
+                <div class="relative">
+                    <input type="password" name="confirm_password" id="confirm_password" required
+                        class="form-input pr-10">
+                    <button type="button" onclick="togglePassword('confirm_password', 'eye-icon-2')"
+                        class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none">
+                        <svg id="eye-icon-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="w-full btn btn-primary">
+            {{ _('Registrarse') }}
+        </button>
+    </form>
+    <p class="mt-6 text-center text-sm text-slate-600 dark:text-slate-400">
+        {{ _('¿Ya tienes cuenta?') }} <a href="{{ url_for('auth.login') }}" class="link-primary">{{ _('Ingresa aquí')
+            }}</a>
+    </p>
+</div>
+{% endblock %}

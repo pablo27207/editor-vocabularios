@@ -1,0 +1,156 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-12-06 00:00+0000\n"
+"PO-Revision-Date: 2025-12-05 23:58+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/base.html:7 templates/base.html:72
+msgid "Editor de Vocabularios Oceanográficos"
+msgstr ""
+
+#: templates/base.html:35
+msgid "Salir"
+msgstr ""
+
+#: templates/base.html:38 templates/login.html:45
+msgid "Entrar"
+msgstr ""
+
+#: templates/base.html:40
+msgid "Registro"
+msgstr ""
+
+#: templates/index.html:5
+msgid "Vocabularios controlados"
+msgstr ""
+
+#: templates/index.html:6
+msgid ""
+"Gestión y visualización de vocabularios\n"
+"        oceanográficos (SKOS)."
+msgstr ""
+
+#: templates/index.html:17
+msgid "Ver vocabulario"
+msgstr ""
+
+#: templates/index.html:21
+msgid "No hay vocabularios cargados. Ejecuta"
+msgstr ""
+
+#: templates/login.html:6
+msgid "Iniciar sesión"
+msgstr ""
+
+#: templates/login.html:27 templates/register.html:58
+msgid "Contraseña"
+msgstr ""
+
+#: templates/login.html:49
+msgid "¿No tienes cuenta?"
+msgstr ""
+
+#: templates/login.html:51
+msgid "Regístrate aquí"
+msgstr ""
+
+#: templates/register.html:6
+msgid "Crear cuenta"
+msgstr ""
+
+#: templates/register.html:23
+msgid "Nombre"
+msgstr ""
+
+#: templates/register.html:29
+msgid "Apellido"
+msgstr ""
+
+#: templates/register.html:43
+msgid "Organización"
+msgstr ""
+
+#: templates/register.html:50
+msgid "Contacto (opcional)"
+msgstr ""
+
+#: templates/register.html:51
+msgid "Teléfono, LinkedIn, etc."
+msgstr ""
+
+#: templates/register.html:72
+msgid ""
+"Min. 8 caracteres, 1 mayúscula, 1\n"
+"                    número/símbolo."
+msgstr ""
+
+#: templates/register.html:77
+msgid "Confirmar"
+msgstr ""
+
+#: templates/register.html:97
+msgid "Registrarse"
+msgstr ""
+
+#: templates/register.html:101
+msgid "¿Ya tienes cuenta?"
+msgstr ""
+
+#: templates/register.html:103
+msgid "Ingresa aquí"
+msgstr ""
+
+#: templates/vocab_editor.html:5
+msgid "Volver"
+msgstr ""
+
+#: templates/vocab_editor.html:15
+msgid "Jerarquía"
+msgstr ""
+
+#: templates/vocab_editor.html:17
+msgid "Alternar vista"
+msgstr ""
+
+#: templates/vocab_editor.html:42 templates/vocab_editor.html:60
+msgid "Ir a detalle"
+msgstr ""
+
+#: templates/vocab_editor.html:77
+msgid "Lista plana"
+msgstr ""
+
+#: templates/vocab_editor.html:87
+msgid "Etiqueta (ES)"
+msgstr ""
+
+#: templates/vocab_editor.html:87
+msgid "Etiqueta (EN)"
+msgstr ""
+
+#: templates/vocab_editor.html:91
+msgid "Definición (ES)"
+msgstr ""
+
+#: templates/vocab_editor.html:91
+msgid "Definición (EN)"
+msgstr ""
+
+#: templates/vocab_editor.html:95
+msgid "Acciones"
+msgstr ""
+

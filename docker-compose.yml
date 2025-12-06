@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/app
     environment:
-      - FLASK_APP=app.py
+      - FLASK_APP=run.py
       - FLASK_DEBUG=1
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/oceanvocab
       - SECRET_KEY=dev_secret_key
@@ -17,6 +17,13 @@ services:
       - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
     depends_on:
       - db
+
+  css-watcher:
+    image: python:3.10-slim
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: sh -c "echo 'Starting CSS Watcher...' && chmod +x ./bin/tailwindcss && ./bin/tailwindcss -i ./app/static/css/input.css -o ./app/static/css/output.css -c ./config/tailwind.config.js --watch --poll"
 
   db:
     image: postgres:15

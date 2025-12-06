@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="vocab-header">
+    <a href="/" class="text-slate-600 dark:text-slate-400 hover:underline">&larr; {{ _('Volver') }}</a>
+    <h1 class="text-3xl font-bold mt-2 text-slate-800 dark:text-white">{{ vocab.name }}</h1>
+    <p class="text-gray-600 dark:text-gray-400">{{ vocab.description }}</p>
+</div>
+
+<!-- Tree View -->
+<div class="panel-container">
+    <div class="panel-header">
+        <h2 class="panel-title">{{ _('Jerarquía') }}</h2>
+        <button onclick="document.getElementById('tree-view').classList.toggle('hidden');"
+            class="text-sm text-blue-600 dark:text-blue-400 hover:underline">{{ _('Alternar vista') }}</button>
+    </div>
+    <div id="tree-view" class="p-4">
+        {% macro render_tree(term_list) %}
+        <ul class="pl-4 border-l border-gray-200 dark:border-neutral-700 ml-2">
+            {% for term in term_list %}
+            <li class="mb-1">
+                <div class="flex items-center group">
+                    {% if children_map[term.concept_id] %}
+                    <details class="w-full">
+                        <summary
+                            class="cursor-pointer list-none flex items-center hover:bg-gray-100 dark:hover:bg-neutral-700 p-1 rounded-sm">
+                            <span class="mr-2 text-gray-400 text-xs">▶</span>
+                            <span class="font-medium text-slate-700 dark:text-slate-200 mr-2">{{ term.concept_id
+                                }}</span>
+                            <!-- Show localized label primarily -->
+                            <span class="text-sm text-gray-500 dark:text-gray-400">
+                                {% if get_locale() == 'es' %}
+                                {{ term.pref_label_es }}
+                                {% else %}
+                                {{ term.pref_label_en }}
+                                {% endif %}
+                            </span>
+                            <a href="#term-{{ term.id }}"
+                                class="ml-auto text-xs text-blue-500 opacity-0 group-hover:opacity-100 hover:underline">{{
+                                _('Ir a detalle') }}</a>
+                        </summary>
+                        {{ render_tree(children_map[term.concept_id]) }}
+                    </details>
+                    {% else %}
+                    <div class="flex items-center w-full p-1 hover:bg-gray-100 dark:hover:bg-neutral-700 rounded-sm">
+                        <span class="w-4 mr-2"></span> <!-- Spacer for alignment -->
+                        <span class="font-medium text-slate-700 dark:text-slate-200 mr-2">{{ term.concept_id }}</span>
+                        <!-- Show localized label primarily -->
+                        <span class="text-sm text-gray-500 dark:text-gray-400">
+                            {% if get_locale() == 'es' %}
+                            {{ term.pref_label_es }}
+                            {% else %}
+                            {{ term.pref_label_en }}
+                            {% endif %}
+                        </span>
+                        <a href="#term-{{ term.id }}"
+                            class="ml-auto text-xs text-blue-500 opacity-0 group-hover:opacity-100 hover:underline">{{
+                            _('Ir a detalle') }}</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endmacro %}
+
+        {{ render_tree(roots) }}
+    </div>
+</div>
+
+<!-- List View -->
+<div class="panel-container">
+    <div class="panel-header">
+        <h2 class="panel-title">{{ _('Lista plana') }}</h2>
+    </div>
+    <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+        <thead class="bg-gray-50 dark:bg-neutral-900">
+            <tr>
+                <th class="table-header-cell">ID</th>
+                <th class="table-header-cell">
+                    {{ _('Etiqueta (ES)') }} / {{ _('Etiqueta (EN)') }}
+                </th>
+                <th class="table-header-cell">
+                    {{ _('Definición (ES)') }} / {{ _('Definición (EN)') }}
+                </th>
+                <th class="table-header-cell">
+                    {{ _('Acciones') }}
+                </th>
+            </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-neutral-800 divide-y divide-gray-200 dark:divide-neutral-700">
+            {% for term in terms %}
+            {% include 'partials/_term_row.html' %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
