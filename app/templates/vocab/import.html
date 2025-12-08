@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto">
+    <!-- Breadcrumb -->
+    <div class="mb-6">
+        <a href="{{ url_for('vocab.vocab_list') }}" class="text-slate-600 dark:text-slate-400 hover:underline">
+            &larr; <span class="lang-es">{{ _('Volver a vocabularios') }}</span>
+            <span class="lang-en">Back to vocabularies</span>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-slate-800 dark:text-white">
+            <span class="lang-es">{{ _('Importar vocabulario') }}</span>
+            <span class="lang-en">Import Vocabulary</span>
+        </h1>
+        <p class="text-slate-500 dark:text-slate-400 mt-1">
+            <span class="lang-es">{{ _('Importa un vocabulario desde un archivo RDF/XML, Turtle o JSON-LD.') }}</span>
+            <span class="lang-en">Import a vocabulary from an RDF/XML, Turtle or JSON-LD file.</span>
+        </p>
+    </div>
+
+    <!-- Form -->
+    <form action="{{ url_for('vocab.vocab_import') }}" method="POST" enctype="multipart/form-data">
+        <div
+            class="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-200 dark:border-neutral-700 p-6 mb-6">
+
+            <!-- Action Type -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
+                    <span class="lang-es">{{ _('Acción') }}</span>
+                    <span class="lang-en">Action</span>
+                </label>
+                <div class="space-y-3">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="action" value="create" checked
+                            class="w-4 h-4 text-blue-600 border-slate-300 dark:border-slate-600">
+                        <span class="text-slate-700 dark:text-slate-300">
+                            <span class="lang-es">Crear nuevo vocabulario</span>
+                            <span class="lang-en">Create new vocabulary</span>
+                        </span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="action" value="update"
+                            class="w-4 h-4 text-blue-600 border-slate-300 dark:border-slate-600">
+                        <span class="text-slate-700 dark:text-slate-300">
+                            <span class="lang-es">Actualizar vocabulario existente</span>
+                            <span class="lang-en">Update existing vocabulary</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Existing Vocabulary (for update) -->
+            <div class="mb-6" id="existing-vocab-select" style="display: none;">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <span class="lang-es">{{ _('Vocabulario a actualizar') }}</span>
+                    <span class="lang-en">Vocabulary to update</span>
+                </label>
+                <select name="vocab_id"
+                    class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500">
+                    <option value="">
+                        <span class="lang-es">-- Seleccionar vocabulario --</span>
+                    </option>
+                    {% for vocab in vocabularies %}
+                    <option value="{{ vocab.id }}">{{ vocab.name }} ({{ vocab.code }})</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- File Upload -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <span class="lang-es">{{ _('Archivo') }} *</span>
+                    <span class="lang-en">File *</span>
+                </label>
+                <input type="file" name="file" required accept=".rdf,.xml,.ttl,.jsonld,.json"
+                    class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white">
+                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                    <span class="lang-es">Formatos soportados: RDF/XML (.rdf, .xml), Turtle (.ttl), JSON-LD (.jsonld,
+                        .json)</span>
+                    <span class="lang-en">Supported formats: RDF/XML (.rdf, .xml), Turtle (.ttl), JSON-LD (.jsonld,
+                        .json)</span>
+                </p>
+            </div>
+
+            <!-- Merge Options (for update) -->
+            <div class="mb-6 p-4 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700"
+                id="merge-options" style="display: none;">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
+                    <span class="lang-es">{{ _('Opciones de merge') }}</span>
+                    <span class="lang-en">Merge options</span>
+                </label>
+                <div class="space-y-2">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="add_new" checked
+                            class="w-4 h-4 text-blue-600 border-slate-300 dark:border-slate-600 rounded">
+                        <span class="text-sm text-slate-700 dark:text-slate-300">
+                            <span class="lang-es">Agregar conceptos nuevos</span>
+                            <span class="lang-en">Add new concepts</span>
+                        </span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="update_existing" checked
+                            class="w-4 h-4 text-blue-600 border-slate-300 dark:border-slate-600 rounded">
+                        <span class="text-sm text-slate-700 dark:text-slate-300">
+                            <span class="lang-es">Actualizar conceptos existentes</span>
+                            <span class="lang-en">Update existing concepts</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-4">
+            <button type="submit"
+                class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded transition-colors">
+                <span class="lang-es">{{ _('Importar') }}</span>
+                <span class="lang-en">Import</span>
+            </button>
+            <a href="{{ url_for('vocab.vocab_list') }}"
+                class="px-6 py-2.5 border border-slate-400 dark:border-slate-500 text-slate-600 dark:text-slate-300 font-medium rounded hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                <span class="lang-es">{{ _('Cancelar') }}</span>
+                <span class="lang-en">Cancel</span>
+            </a>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Toggle visibility of update options based on action selection
+    document.querySelectorAll('input[name="action"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+            const existingSelect = document.getElementById('existing-vocab-select');
+            const mergeOptions = document.getElementById('merge-options');
+            if (this.value === 'update') {
+                existingSelect.style.display = 'block';
+                mergeOptions.style.display = 'block';
+            } else {
+                existingSelect.style.display = 'none';
+                mergeOptions.style.display = 'none';
+            }
+        });
+    });
+</script>
+{% endblock %}

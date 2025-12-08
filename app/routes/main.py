@@ -10,11 +10,15 @@ def index():
     if 'user_id' in session:
         user = {'name': session.get('user_name'), 'role': session.get('user_role')}
     
-    # Fetch vocabularies for dashboard
-    from app.models import Vocabulary
-    vocabularies = Vocabulary.query.all()
+    # Fetch statistics for home page
+    from app.models import Vocabulary, Term, User
+    stats = {
+        'vocabularies': Vocabulary.query.count(),
+        'concepts': Term.query.filter(Term.deleted_at.is_(None)).count(),
+        'users': User.query.count()
+    }
     
-    return render_template('index.html', user=user, vocabularies=vocabularies)
+    return render_template('index.html', user=user, stats=stats)
 
 
 @main_bp.route('/set_language/<lang>')

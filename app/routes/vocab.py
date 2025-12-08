@@ -1,10 +1,221 @@
 """Vocabulary routes - viewing and editing terms."""
 from datetime import datetime
-from flask import Blueprint, render_template, request, session
+from flask import Blueprint, render_template, request, session, redirect, url_for, flash
+from flask_babel import gettext as _
 from app.models import db, Vocabulary, Term, ChangeRequest
 from app.routes.auth import login_required
 
 vocab_bp = Blueprint('vocab', __name__)
+
+
+# ========================================
+# VOCABULARY LIST AND MANAGEMENT
+# ========================================
+
+@vocab_bp.route('/vocabs')
+def vocab_list():
+    """List all vocabularies."""
+    from sqlalchemy import func
+    
+    vocabularies = Vocabulary.query.order_by(Vocabulary.name).all()
+    
+    # Get term counts and last modified for each vocabulary
+    vocab_stats = {}
+    vocab_last_modified = {}
+    for vocab in vocabularies:
+        vocab_stats[vocab.id] = Term.query.filter_by(vocab_id=vocab.id).filter(Term.deleted_at.is_(None)).count()
+        # Get the most recent updated_at from terms
+        last_term = Term.query.filter_by(vocab_id=vocab.id).order_by(Term.updated_at.desc()).first()
+        vocab_last_modified[vocab.id] = last_term.updated_at if last_term else vocab.created_at
+    
+    user_role = session.get('user_role', 'viewer')
+    return render_template('vocab/list.html', vocabularies=vocabularies, vocab_stats=vocab_stats, vocab_last_modified=vocab_last_modified, user_role=user_role)
+
+
+@vocab_bp.route('/vocab/new', methods=['GET'])
+@login_required
+def vocab_create_form():
+    """Show form to create a new vocabulary."""
+    user_role = session.get('user_role', 'viewer')
+    if user_role not in ['admin', 'reviewer', 'editor']:
+        flash(_('No tienes permisos para crear vocabularios.'), 'error')
+        return redirect(url_for('vocab.vocab_list'))
+    return render_template('vocab/create.html', user_role=user_role)
+
+
+@vocab_bp.route('/vocab/new', methods=['POST'])
+@login_required
+def vocab_create():
+    """Create a new vocabulary."""
+    user_role = session.get('user_role', 'viewer')
+    
+    if user_role not in ['admin', 'reviewer', 'editor']:
+        flash(_('No tienes permisos para crear vocabularios.'), 'error')
+        return redirect(url_for('vocab.vocab_list'))
+    
+    code = request.form.get('code', '').strip()
+    name = request.form.get('name', '').strip()
+    name_en = request.form.get('name_en', '').strip()
+    description = request.form.get('description', '').strip()
+    description_en = request.form.get('description_en', '').strip()
+    base_uri = request.form.get('base_uri', '').strip()
+    version = request.form.get('version', '').strip()
+    
+    # Validation
+    if not code or not name:
+        flash(_('El código y nombre son obligatorios.'), 'error')
+        return render_template('vocab/create.html', user_role=user_role)
+    
+    # Check if code already exists
+    existing = Vocabulary.query.filter_by(code=code).first()
+    if existing:
+        flash(_('Ya existe un vocabulario con ese código.'), 'error')
+        return render_template('vocab/create.html', user_role=user_role)
+    
+    # Create vocabulary
+    vocab = Vocabulary(
+        code=code,
+        name=name,
+        name_en=name_en or None,
+        description=description or None,
+        description_en=description_en or None,
+        base_uri=base_uri or None,
+        version=version or None
+    )
+    
+    db.session.add(vocab)
+    db.session.commit()
+    
+    flash(_('Vocabulario creado exitosamente.'), 'success')
+    return redirect(url_for('vocab.view_vocab', vocab_id=vocab.id))
+
+
+@vocab_bp.route('/vocab/<int:vocab_id>/edit', methods=['GET'])
+@login_required
+def vocab_edit_form(vocab_id):
+    """Show form to edit vocabulary metadata."""
+    vocab = Vocabulary.query.get_or_404(vocab_id)
+    user_role = session.get('user_role', 'viewer')
+    
+    if user_role not in ['admin', 'reviewer']:
+        flash(_('No tienes permisos para editar vocabularios.'), 'error')
+        return redirect(url_for('vocab.view_vocab', vocab_id=vocab_id))
+    
+    return render_template('vocab/edit.html', vocab=vocab, user_role=user_role)
+
+
+@vocab_bp.route('/vocab/<int:vocab_id>/edit', methods=['POST'])
+@login_required
+def vocab_edit(vocab_id):
+    """Update vocabulary metadata."""
+    vocab = Vocabulary.query.get_or_404(vocab_id)
+    user_role = session.get('user_role', 'viewer')
+    
+    if user_role not in ['admin', 'reviewer']:
+        flash(_('No tienes permisos para editar vocabularios.'), 'error')
+        return redirect(url_for('vocab.view_vocab', vocab_id=vocab_id))
+    
+    vocab.name = request.form.get('name', vocab.name).strip()
+    vocab.name_en = request.form.get('name_en', '').strip() or None
+    vocab.description = request.form.get('description', '').strip() or None
+    vocab.description_en = request.form.get('description_en', '').strip() or None
+    vocab.base_uri = request.form.get('base_uri', '').strip() or None
+    vocab.version = request.form.get('version', '').strip() or None
+    
+    db.session.commit()
+    
+    flash(_('Vocabulario actualizado exitosamente.'), 'success')
+    return redirect(url_for('vocab.view_vocab', vocab_id=vocab_id))
+
+
+@vocab_bp.route('/vocab/import', methods=['GET'])
+@login_required
+def vocab_import_form():
+    """Show form to import a vocabulary from file."""
+    user_role = session.get('user_role', 'viewer')
+    if user_role not in ['admin', 'reviewer', 'editor']:
+        flash(_('No tienes permisos para importar vocabularios.'), 'error')
+        return redirect(url_for('vocab.vocab_list'))
+    
+    # Get existing vocabularies for update option
+    vocabularies = Vocabulary.query.order_by(Vocabulary.name).all()
+    return render_template('vocab/import.html', vocabularies=vocabularies, user_role=user_role)
+
+
+@vocab_bp.route('/vocab/import', methods=['POST'])
+@login_required
+def vocab_import():
+    """Handle vocabulary import from file."""
+    user_role = session.get('user_role', 'viewer')
+    if user_role not in ['admin', 'reviewer', 'editor']:
+        flash(_('No tienes permisos para importar vocabularios.'), 'error')
+        return redirect(url_for('vocab.vocab_list'))
+    
+    from app.services.import_service import (
+        parse_rdf_file, detect_format, 
+        create_vocabulary_from_graph, update_vocabulary_from_graph
+    )
+    
+    # Get file
+    file = request.files.get('file')
+    if not file or not file.filename:
+        flash(_('Por favor selecciona un archivo.'), 'error')
+        return redirect(url_for('vocab.vocab_import_form'))
+    
+    # Detect format and parse
+    format = detect_format(file.filename)
+    content = file.read()
+    
+    try:
+        # Try to decode if bytes
+        if isinstance(content, bytes):
+            content = content.decode('utf-8')
+    except UnicodeDecodeError:
+        pass  # Keep as bytes for some formats
+    
+    graph = parse_rdf_file(content, format)
+    if not graph:
+        flash(_('Error al parsear el archivo. Verifica que sea un archivo RDF válido.'), 'error')
+        return redirect(url_for('vocab.vocab_import_form'))
+    
+    action = request.form.get('action', 'create')
+    
+    if action == 'update':
+        vocab_id = request.form.get('vocab_id')
+        if not vocab_id:
+            flash(_('Por favor selecciona un vocabulario para actualizar.'), 'error')
+            return redirect(url_for('vocab.vocab_import_form'))
+        
+        add_new = 'add_new' in request.form
+        update_existing = 'update_existing' in request.form
+        
+        stats = update_vocabulary_from_graph(
+            int(vocab_id), graph, 
+            add_new=add_new, 
+            update_existing=update_existing
+        )
+        
+        if stats:
+            flash(_('Vocabulario actualizado: %(added)d agregados, %(updated)d actualizados, %(skipped)d omitidos.', 
+                   added=stats['added'], updated=stats['updated'], skipped=stats['skipped']), 'success')
+            return redirect(url_for('vocab.view_vocab', vocab_id=vocab_id))
+        else:
+            flash(_('Error al actualizar el vocabulario.'), 'error')
+            return redirect(url_for('vocab.vocab_import_form'))
+    else:
+        # Create new vocabulary
+        vocab = create_vocabulary_from_graph(graph)
+        if vocab:
+            flash(_('Vocabulario importado exitosamente.'), 'success')
+            return redirect(url_for('vocab.view_vocab', vocab_id=vocab.id))
+        else:
+            flash(_('Error al crear el vocabulario desde el archivo.'), 'error')
+            return redirect(url_for('vocab.vocab_import_form'))
+
+
+# ========================================
+# TERM VIEWING AND EDITING
+# ========================================
 
 
 @vocab_bp.route('/vocab/<int:vocab_id>')

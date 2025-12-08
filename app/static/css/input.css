@@ -255,3 +255,114 @@ html[lang="en"] .lang-es {
     background-color: #1e293b;
     color: white;
 }
+
+/* ========================================
+   ADDITIONAL UTILITIES FOR HOME PAGE
+   ======================================== */
+
+/* Max width constraint for centered content */
+.max-w-4xl {
+    max-width: 56rem;
+}
+
+/* Gap utilities */
+.gap-8 {
+    gap: 2rem;
+}
+
+/* Item alignment */
+.items-start {
+    align-items: flex-start;
+}
+
+/* Shadow utilities */
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hover\:shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Width/Height for icons */
+.w-12 {
+    width: 3rem;
+}
+
+.h-12 {
+    height: 3rem;
+}
+
+.w-6 {
+    width: 1.5rem;
+}
+
+.h-6 {
+    height: 1.5rem;
+}
+
+/* Padding utilities */
+.px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+/* Background colors with opacity for dark mode icons */
+.dark .dark\:bg-blue-900\/50 {
+    background-color: rgba(30, 58, 138, 0.5);
+}
+
+.dark .dark\:bg-green-900\/50 {
+    background-color: rgba(20, 83, 45, 0.5);
+}
+
+.dark .dark\:bg-purple-900\/50 {
+    background-color: rgba(88, 28, 135, 0.5);
+}
+
+.dark .dark\:bg-orange-900\/50 {
+    background-color: rgba(124, 45, 18, 0.5);
+}
+
+/* Icon colors in light mode */
+.text-blue-600 {
+    color: #2563eb;
+}
+
+.text-green-600 {
+    color: #16a34a;
+}
+
+.text-purple-600 {
+    color: #9333ea;
+}
+
+.text-orange-600 {
+    color: #ea580c;
+}
+
+/* Icon colors in dark mode */
+.dark .dark\:text-blue-400 {
+    color: #60a5fa;
+}
+
+.dark .dark\:text-green-400 {
+    color: #4ade80;
+}
+
+.dark .dark\:text-purple-400 {
+    color: #c084fc;
+}
+
+.dark .dark\:text-orange-400 {
+    color: #fb923c;
+}

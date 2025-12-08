@@ -1,26 +1,300 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="hero-section">
-    <h1 class="hero-title">{{ _('Vocabularios controlados') }}</h1>
-    <p class="hero-subtitle">{{ _('Gestión y visualización de vocabularios
-        oceanográficos (SKOS).') }}</p>
+<style>
+    /* Light mode colors */
+    .home-stat-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+    }
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {% for vocab in vocabularies %}
-        <div
-            class="bg-white dark:bg-neutral-800 p-6 border border-gray-200 dark:border-neutral-700 shadow-sm hover:shadow-md transition-shadow rounded-sm">
-            <h2 class="text-xl font-semibold mb-2 text-slate-800 dark:text-slate-100">{{ vocab.name }}</h2>
-            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">{{ vocab.description[:100] }}...</p>
-            <a href="{{ url_for('vocab.view_vocab', vocab_id=vocab.id) }}"
-                class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white font-medium hover:underline">{{
-                _('Ver vocabulario') }} &rarr;</a>
+    .home-section {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+    }
+
+    .home-section-alt {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+    }
+
+    .home-title {
+        color: #1e40af;
+    }
+
+    .home-subtitle {
+        color: #64748b;
+    }
+
+    .home-heading {
+        color: #1e293b;
+    }
+
+    .home-text {
+        color: #64748b;
+    }
+
+    .home-stat-label {
+        color: #64748b;
+    }
+
+    .home-feature-title {
+        color: #1e293b;
+    }
+
+    .home-feature-text {
+        color: #64748b;
+    }
+
+    .icon-bg-blue {
+        background: rgba(37, 99, 235, 0.15);
+    }
+
+    .icon-bg-green {
+        background: rgba(22, 163, 74, 0.15);
+    }
+
+    .icon-bg-purple {
+        background: rgba(168, 85, 247, 0.15);
+    }
+
+    .icon-bg-orange {
+        background: rgba(249, 115, 22, 0.15);
+    }
+
+    /* Dark mode colors */
+    .dark .home-stat-card {
+        background: #262626;
+        border-color: #404040;
+    }
+
+    .dark .home-section {
+        background: #262626;
+        border-color: #404040;
+    }
+
+    .dark .home-section-alt {
+        background: #1a1a1a;
+        border-color: #404040;
+    }
+
+    .dark .home-title {
+        color: #60a5fa;
+    }
+
+    .dark .home-subtitle {
+        color: #9ca3af;
+    }
+
+    .dark .home-heading {
+        color: #ffffff;
+    }
+
+    .dark .home-text {
+        color: #9ca3af;
+    }
+
+    .dark .home-stat-label {
+        color: #9ca3af;
+    }
+
+    .dark .home-feature-title {
+        color: #ffffff;
+    }
+
+    .dark .home-feature-text {
+        color: #9ca3af;
+    }
+
+    .dark .icon-bg-blue {
+        background: rgba(37, 99, 235, 0.25);
+    }
+
+    .dark .icon-bg-green {
+        background: rgba(22, 163, 74, 0.25);
+    }
+
+    .dark .icon-bg-purple {
+        background: rgba(168, 85, 247, 0.25);
+    }
+
+    .dark .icon-bg-orange {
+        background: rgba(249, 115, 22, 0.25);
+    }
+</style>
+
+<!-- Hero Section -->
+<div style="text-align: center; padding: 2.5rem 0; margin-bottom: 1.5rem;">
+    <h1 class="home-title" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+        <span class="lang-es">{{ _('OceanVocab Editor') }}</span>
+        <span class="lang-en">OceanVocab Editor</span>
+    </h1>
+    <p class="home-subtitle" style="font-size: 1.25rem; max-width: 48rem; margin: 0 auto; line-height: 1.75;">
+        <span class="lang-es">{{ _('Plataforma para la gestión, visualización y publicación de vocabularios controlados
+            oceanográficos basados en SKOS.') }}</span>
+        <span class="lang-en">Platform for managing, visualizing, and publishing ocean-related controlled vocabularies
+            based on SKOS.</span>
+    </p>
+</div>
+
+<!-- Stats Cards - Side by side -->
+<div style="max-width: 48rem; margin: 0 auto 2.5rem auto;">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+        <div class="home-stat-card" style="padding: 1.5rem 1rem; border-radius: 0.5rem; text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 700; color: #2563eb; margin-bottom: 0.25rem;">{{
+                stats.vocabularies }}</div>
+            <div class="home-stat-label" style="font-size: 0.875rem;">
+                <span class="lang-es">{{ _('Vocabularios') }}</span>
+                <span class="lang-en">Vocabularies</span>
+            </div>
         </div>
-        {% else %}
-        <div class="col-span-3 text-center text-gray-500 dark:text-gray-400">
-            <p>{{ _('No hay vocabularios cargados. Ejecuta') }} <code>flask import-rdf</code>.</p>
+        <div class="home-stat-card" style="padding: 1.5rem 1rem; border-radius: 0.5rem; text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 700; color: #16a34a; margin-bottom: 0.25rem;">{{ stats.concepts
+                }}</div>
+            <div class="home-stat-label" style="font-size: 0.875rem;">
+                <span class="lang-es">{{ _('Conceptos') }}</span>
+                <span class="lang-en">Concepts</span>
+            </div>
         </div>
-        {% endfor %}
+        <div class="home-stat-card" style="padding: 1.5rem 1rem; border-radius: 0.5rem; text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 700; color: #9333ea; margin-bottom: 0.25rem;">{{ stats.users }}
+            </div>
+            <div class="home-stat-label" style="font-size: 0.875rem;">
+                <span class="lang-es">{{ _('Usuarios') }}</span>
+                <span class="lang-en">Users</span>
+            </div>
+        </div>
     </div>
+</div>
+
+<!-- What are Controlled Vocabularies -->
+<div class="home-section"
+    style="max-width: 48rem; margin: 0 auto 2rem auto; border-radius: 0.5rem; padding: 2rem 2.5rem;">
+    <h2 class="home-heading" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">
+        <span class="lang-es">{{ _('¿Qué son los vocabularios controlados?') }}</span>
+        <span class="lang-en">What are Controlled Vocabularies?</span>
+    </h2>
+    <p class="home-text" style="line-height: 1.75;">
+        <span class="lang-es">
+            Los vocabularios controlados son listas organizadas de términos estandarizados que se utilizan para
+            describir, clasificar e indexar información de manera consistente. En el contexto oceanográfico,
+            permiten que investigadores, instituciones y sistemas compartan datos de manera interoperable,
+            eliminando ambigüedades y facilitando la integración de información proveniente de diversas fuentes.
+        </span>
+        <span class="lang-en">
+            Controlled vocabularies are organized lists of standardized terms used to describe, classify, and
+            index information consistently. In the oceanographic context, they enable researchers, institutions,
+            and systems to share data in an interoperable way, eliminating ambiguities and facilitating the
+            integration of information from various sources.
+        </span>
+    </p>
+</div>
+
+<!-- SKOS Benefits -->
+<div class="home-section-alt"
+    style="max-width: 48rem; margin: 0 auto 2.5rem auto; border-radius: 0.5rem; padding: 2rem 2.5rem;">
+    <h2 class="home-heading" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+        <span class="lang-es">{{ _('¿Por qué SKOS?') }}</span>
+        <span class="lang-en">Why SKOS?</span>
+    </h2>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+        <!-- Interoperability -->
+        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div class="icon-bg-blue"
+                style="flex-shrink: 0; width: 3rem; height: 3rem; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 1.5rem; height: 1.5rem; color: #2563eb;" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <div>
+                <h3 class="home-feature-title" style="font-weight: 600; margin-bottom: 0.25rem;">
+                    <span class="lang-es">Interoperabilidad</span>
+                    <span class="lang-en">Interoperability</span>
+                </h3>
+                <p class="home-feature-text" style="font-size: 0.875rem;">
+                    <span class="lang-es">Formato estándar W3C para compartir vocabularios entre sistemas.</span>
+                    <span class="lang-en">W3C standard format for sharing vocabularies between systems.</span>
+                </p>
+            </div>
+        </div>
+        <!-- Consistency -->
+        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div class="icon-bg-green"
+                style="flex-shrink: 0; width: 3rem; height: 3rem; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 1.5rem; height: 1.5rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <div>
+                <h3 class="home-feature-title" style="font-weight: 600; margin-bottom: 0.25rem;">
+                    <span class="lang-es">Consistencia</span>
+                    <span class="lang-en">Consistency</span>
+                </h3>
+                <p class="home-feature-text" style="font-size: 0.875rem;">
+                    <span class="lang-es">Terminología estandarizada reduce errores de interpretación.</span>
+                    <span class="lang-en">Standardized terminology reduces interpretation errors.</span>
+                </p>
+            </div>
+        </div>
+        <!-- Multilingual -->
+        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div class="icon-bg-purple"
+                style="flex-shrink: 0; width: 3rem; height: 3rem; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 1.5rem; height: 1.5rem; color: #9333ea;" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <div>
+                <h3 class="home-feature-title" style="font-weight: 600; margin-bottom: 0.25rem;">
+                    <span class="lang-es">Multilingüe</span>
+                    <span class="lang-en">Multilingual</span>
+                </h3>
+                <p class="home-feature-text" style="font-size: 0.875rem;">
+                    <span class="lang-es">Soporte nativo para etiquetas en múltiples idiomas.</span>
+                    <span class="lang-en">Native support for labels in multiple languages.</span>
+                </p>
+            </div>
+        </div>
+        <!-- Exportable -->
+        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div class="icon-bg-orange"
+                style="flex-shrink: 0; width: 3rem; height: 3rem; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 1.5rem; height: 1.5rem; color: #ea580c;" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <div>
+                <h3 class="home-feature-title" style="font-weight: 600; margin-bottom: 0.25rem;">
+                    <span class="lang-es">Exportable</span>
+                    <span class="lang-en">Exportable</span>
+                </h3>
+                <p class="home-feature-text" style="font-size: 0.875rem;">
+                    <span class="lang-es">Exporta a RDF/XML, Turtle, JSON-LD y CSV.</span>
+                    <span class="lang-en">Export to RDF/XML, Turtle, JSON-LD and CSV.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Button -->
+<div style="text-align: center; padding: 1.5rem 0 3rem;">
+    <a href="{{ url_for('vocab.vocab_list') }}"
+        style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2.5rem; background: #2563eb; color: white; font-weight: 600; border-radius: 0.5rem; text-decoration: none; font-size: 1.125rem; transition: background 0.2s;"
+        onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+        <span class="lang-es">{{ _('Explorar vocabularios') }}</span>
+        <span class="lang-en">Explore Vocabularies</span>
+        <svg style="width: 1.25rem; height: 1.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+    </a>
 </div>
 {% endblock %}

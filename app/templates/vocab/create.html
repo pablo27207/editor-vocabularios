@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto">
+    <!-- Breadcrumb -->
+    <div class="mb-6">
+        <a href="{{ url_for('vocab.vocab_list') }}" class="text-slate-600 dark:text-slate-400 hover:underline">
+            &larr; <span class="lang-es">{{ _('Volver a vocabularios') }}</span>
+            <span class="lang-en">Back to vocabularies</span>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-slate-800 dark:text-white">
+            <span class="lang-es">{{ _('Crear vocabulario') }}</span>
+            <span class="lang-en">Create Vocabulary</span>
+        </h1>
+        <p class="text-slate-500 dark:text-slate-400 mt-1">
+            <span class="lang-es">{{ _('Define la información básica del nuevo vocabulario.') }}</span>
+            <span class="lang-en">Define the basic information for the new vocabulary.</span>
+        </p>
+    </div>
+
+    <!-- Form -->
+    <form action="{{ url_for('vocab.vocab_create') }}" method="POST">
+        <div
+            class="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-200 dark:border-neutral-700 p-6 mb-6">
+            <!-- Code -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <span class="lang-es">{{ _('Código') }} *</span>
+                    <span class="lang-en">Code *</span>
+                </label>
+                <input type="text" name="code" required
+                    class="w-full max-w-xs px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500"
+                    placeholder="ej: QF_IODE">
+                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                    <span class="lang-es">Identificador único del vocabulario (sin espacios).</span>
+                    <span class="lang-en">Unique vocabulary identifier (no spaces).</span>
+                </p>
+            </div>
+
+            <!-- Name ES -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <span class="lang-es">{{ _('Nombre (Español)') }} *</span>
+                    <span class="lang-en">Name (Spanish) *</span>
+                </label>
+                <input type="text" name="name" required
+                    class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <!-- Name EN -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <span class="lang-es">{{ _('Nombre (Inglés)') }}</span>
+                    <span class="lang-en">Name (English)</span>
+                </label>
+                <input type="text" name="name_en"
+                    class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <!-- Description ES -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <span class="lang-es">{{ _('Descripción (Español)') }}</span>
+                    <span class="lang-en">Description (Spanish)</span>
+                </label>
+                <textarea name="description" rows="3"
+                    class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+
+            <!-- Description EN -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <span class="lang-es">{{ _('Descripción (Inglés)') }}</span>
+                    <span class="lang-en">Description (English)</span>
+                </label>
+                <textarea name="description_en" rows="3"
+                    class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+
+            <!-- Base URI -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <span class="lang-es">{{ _('URI Base') }}</span>
+                    <span class="lang-en">Base URI</span>
+                </label>
+                <input type="text" name="base_uri"
+                    class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500"
+                    placeholder="http://vocab.example.org/scheme/">
+                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                    <span class="lang-es">URI base para la generación de identificadores RDF.</span>
+                    <span class="lang-en">Base URI for RDF identifier generation.</span>
+                </p>
+            </div>
+
+            <!-- Version -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <span class="lang-es">{{ _('Versión') }}</span>
+                    <span class="lang-en">Version</span>
+                </label>
+                <input type="text" name="version"
+                    class="w-full max-w-xs px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500"
+                    placeholder="1.0">
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-4">
+            <button type="submit"
+                class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded transition-colors">
+                <span class="lang-es">{{ _('Crear vocabulario') }}</span>
+                <span class="lang-en">Create Vocabulary</span>
+            </button>
+            <a href="{{ url_for('vocab.vocab_list') }}"
+                class="px-6 py-2.5 border border-slate-400 dark:border-slate-500 text-slate-600 dark:text-slate-300 font-medium rounded hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                <span class="lang-es">{{ _('Cancelar') }}</span>
+                <span class="lang-en">Cancel</span>
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}
