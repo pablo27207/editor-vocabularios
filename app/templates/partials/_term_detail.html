@@ -1,0 +1,294 @@
+<!-- Term Detail Modal Content -->
+<div class="p-6">
+    <!-- Header -->
+    <div class="flex justify-between items-start mb-6">
+        <div>
+            <h2 class="text-2xl font-bold text-slate-800 dark:text-white">{{ term.concept_id }}</h2>
+            <p class="text-sm text-slate-500 dark:text-slate-400">{{ vocab.name }}</p>
+        </div>
+        {% if term.deleted_at %}
+        <span
+            class="px-3 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300">
+            <span class="lang-es">Eliminado</span>
+            <span class="lang-en">Deleted</span>
+        </span>
+        {% elif term.status == 'deprecated' %}
+        <span
+            class="px-3 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300">
+            <span class="lang-es">Obsoleto</span>
+            <span class="lang-en">Deprecated</span>
+        </span>
+        {% else %}
+        <span
+            class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
+            <span class="lang-es">Activo</span>
+            <span class="lang-en">Active</span>
+        </span>
+        {% endif %}
+    </div>
+
+    <!-- Labels -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div>
+            <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">
+                <span class="lang-es">Etiqueta (ES)</span>
+                <span class="lang-en">Label (ES)</span>
+            </h3>
+            <p class="text-slate-800 dark:text-white">{{ term.pref_label_es or '-' }}</p>
+        </div>
+        <div>
+            <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">
+                <span class="lang-es">Etiqueta (EN)</span>
+                <span class="lang-en">Label (EN)</span>
+            </h3>
+            <p class="text-slate-800 dark:text-white">{{ term.pref_label_en or '-' }}</p>
+        </div>
+    </div>
+
+    <!-- Definitions -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div>
+            <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">
+                <span class="lang-es">Definición (ES)</span>
+                <span class="lang-en">Definition (ES)</span>
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 text-sm">{{ term.definition_es or '-' }}</p>
+        </div>
+        <div>
+            <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">
+                <span class="lang-es">Definición (EN)</span>
+                <span class="lang-en">Definition (EN)</span>
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 text-sm">{{ term.definition_en or '-' }}</p>
+        </div>
+    </div>
+
+    <!-- Alt Labels -->
+    {% if term.alt_labels %}
+    <div class="mb-6">
+        <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-2">
+            <span class="lang-es">Etiquetas alternativas</span>
+            <span class="lang-en">Alternative Labels</span>
+        </h3>
+        <div class="flex flex-wrap gap-2">
+            {% for alt in term.alt_labels %}
+            <span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">
+                {{ alt.label }} <span class="text-slate-400">({{ alt.lang }})</span>
+            </span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Relationships -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <!-- Broader -->
+        <div>
+            <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-2">
+                <span class="lang-es">Términos más amplios</span>
+                <span class="lang-en">Broader Terms</span>
+            </h3>
+            {% if term.broader %}
+            <ul class="space-y-1">
+                {% for b in term.broader %}
+                <li>
+                    {% if b in all_terms %}
+                    <a href="#term-{{ all_terms[b].id }}"
+                        class="text-blue-600 dark:text-blue-400 hover:underline text-sm" onclick="closeModal()">
+                        {{ b }}
+                    </a>
+                    {% else %}
+                    <span class="text-sm text-slate-600 dark:text-slate-400">{{ b }}</span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="text-sm text-slate-400">-</p>
+            {% endif %}
+        </div>
+        <!-- Narrower -->
+        <div>
+            <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-2">
+                <span class="lang-es">Términos más específicos</span>
+                <span class="lang-en">Narrower Terms</span>
+            </h3>
+            {% if term.narrower %}
+            <ul class="space-y-1 max-h-32 overflow-y-auto">
+                {% for n in term.narrower %}
+                <li>
+                    {% if n in all_terms %}
+                    <a href="#term-{{ all_terms[n].id }}"
+                        class="text-blue-600 dark:text-blue-400 hover:underline text-sm" onclick="closeModal()">
+                        {{ n }}
+                    </a>
+                    {% else %}
+                    <span class="text-sm text-slate-600 dark:text-slate-400">{{ n }}</span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="text-sm text-slate-400">-</p>
+            {% endif %}
+        </div>
+        <!-- Related -->
+        <div>
+            <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-2">
+                <span class="lang-es">Términos relacionados</span>
+                <span class="lang-en">Related Terms</span>
+            </h3>
+            {% if term.related %}
+            <ul class="space-y-1">
+                {% for r in term.related %}
+                <li>
+                    {% if r in all_terms %}
+                    <a href="#term-{{ all_terms[r].id }}"
+                        class="text-blue-600 dark:text-blue-400 hover:underline text-sm" onclick="closeModal()">
+                        {{ r }}
+                    </a>
+                    {% else %}
+                    <span class="text-sm text-slate-600 dark:text-slate-400">{{ r }}</span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="text-sm text-slate-400">-</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- External Mappings -->
+    {% if term.exact_match or term.close_match %}
+    <div class="mb-6">
+        <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-2">
+            <span class="lang-es">Mapeos externos</span>
+            <span class="lang-en">External Mappings</span>
+        </h3>
+        <div class="space-y-2">
+            {% if term.exact_match %}
+            <div>
+                <span class="text-xs text-green-600 dark:text-green-400 font-medium">exactMatch:</span>
+                <ul class="ml-4">
+                    {% for uri in term.exact_match %}
+                    <li><a href="{{ uri }}" target="_blank"
+                            class="text-sm text-blue-600 dark:text-blue-400 hover:underline break-all">{{ uri }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            {% if term.close_match %}
+            <div>
+                <span class="text-xs text-yellow-600 dark:text-yellow-400 font-medium">closeMatch:</span>
+                <ul class="ml-4">
+                    {% for uri in term.close_match %}
+                    <li><a href="{{ uri }}" target="_blank"
+                            class="text-sm text-blue-600 dark:text-blue-400 hover:underline break-all">{{ uri }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Source -->
+    {% if term.source %}
+    <div class="mb-6">
+        <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">
+            <span class="lang-es">Fuente</span>
+            <span class="lang-en">Source</span>
+        </h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400">{{ term.source }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Deletion Reason (if deleted) -->
+    {% if term.deleted_at and term.deletion_reason %}
+    <div class="mb-6 p-3 bg-red-50 dark:bg-red-900/20 rounded border border-red-200 dark:border-red-800">
+        <h3 class="text-xs font-semibold uppercase text-red-600 dark:text-red-400 mb-1">
+            <span class="lang-es">Motivo de eliminación</span>
+            <span class="lang-en">Deletion Reason</span>
+        </h3>
+        <p class="text-sm text-red-700 dark:text-red-300">{{ term.deletion_reason }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Actions -->
+    {% if user_role in ['admin', 'reviewer', 'editor'] %}
+    <div class="flex justify-end gap-3 pt-4 border-t border-slate-200 dark:border-slate-700">
+        {% if term.deleted_at %}
+        {% if user_role == 'admin' %}
+        <button hx-post="{{ url_for('vocab.restore_term', term_id=term.id) }}" hx-target="#term-{{ term.id }}"
+            hx-swap="outerHTML" onclick="closeModal()"
+            class="px-4 py-2 text-sm font-medium text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 rounded">
+            <span class="lang-es">Restaurar</span>
+            <span class="lang-en">Restore</span>
+        </button>
+        {% endif %}
+        {% else %}
+        <button hx-get="{{ url_for('vocab.edit_term_form', term_id=term.id) }}" hx-target="#term-{{ term.id }}"
+            hx-swap="outerHTML" onclick="closeModal()"
+            class="px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded">
+            <span class="lang-es">Editar</span>
+            <span class="lang-en">Edit</span>
+        </button>
+        <button onclick="showDeleteConfirm({{ term.id }})"
+            class="px-4 py-2 text-sm font-medium text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded">
+            <span class="lang-es">Eliminar</span>
+            <span class="lang-en">Delete</span>
+        </button>
+        {% endif %}
+        <button onclick="closeModal()"
+            class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 rounded">
+            <span class="lang-es">Cerrar</span>
+            <span class="lang-en">Close</span>
+        </button>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Delete Confirmation (hidden by default) -->
+<div id="delete-confirm-{{ term.id }}"
+    class="hidden p-6 border-t border-slate-200 dark:border-slate-700 bg-red-50 dark:bg-red-900/10">
+    <h3 class="text-lg font-semibold text-red-700 dark:text-red-400 mb-3">
+        <span class="lang-es">¿Eliminar este término?</span>
+        <span class="lang-en">Delete this term?</span>
+    </h3>
+    <form hx-post="{{ url_for('vocab.delete_term', term_id=term.id) }}" hx-target="#term-{{ term.id }}"
+        hx-swap="outerHTML">
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                <span class="lang-es">Motivo de eliminación</span>
+                <span class="lang-en">Reason for deletion</span>
+            </label>
+            <textarea name="deletion_reason" rows="2" required
+                class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white"
+                placeholder="Describe por qué se debe eliminar este término..."></textarea>
+        </div>
+        <div class="flex justify-end gap-3">
+            <button type="button" onclick="hideDeleteConfirm({{ term.id }})"
+                class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 rounded">
+                <span class="lang-es">Cancelar</span>
+                <span class="lang-en">Cancel</span>
+            </button>
+            <button type="submit" onclick="closeModal()"
+                class="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded">
+                <span class="lang-es">Confirmar eliminación</span>
+                <span class="lang-en">Confirm Delete</span>
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function showDeleteConfirm(termId) {
+        document.getElementById('delete-confirm-' + termId).classList.remove('hidden');
+    }
+    function hideDeleteConfirm(termId) {
+        document.getElementById('delete-confirm-' + termId).classList.add('hidden');
+    }
+</script>

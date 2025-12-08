@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <!-- Breadcrumb -->
+    <div class="mb-6">
+        <a href="{{ url_for('admin.user_detail', user_id=user.id) }}"
+            class="text-slate-600 dark:text-slate-400 hover:underline">
+            &larr; {{ _('Volver a detalle') }}
+        </a>
+    </div>
+
+    <!-- Header -->
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-slate-800 dark:text-white">
+            {{ _('Editar usuario') }}
+        </h1>
+        <p class="text-slate-500 dark:text-slate-400 mt-1">{{ user.email }}</p>
+    </div>
+
+    <!-- Edit Form -->
+    <form action="{{ url_for('admin.update_user', user_id=user.id) }}" method="POST">
+        <!-- Personal Info -->
+        <div
+            class="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-200 dark:border-neutral-700 p-6 mb-6">
+            <h2 class="text-sm font-semibold uppercase text-slate-500 dark:text-slate-400 mb-4">
+                {{ _('Información personal') }}
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                        {{ _('Nombre') }}
+                    </label>
+                    <input type="text" name="name" value="{{ user.name or '' }}"
+                        class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    {% if user.name %}
+                    <p class="mt-2 text-xs text-slate-400">
+                        {{ _('Actual') }}: <span class="italic">{{ user.name }}</span>
+                    </p>
+                    {% endif %}
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                        {{ _('Apellido') }}
+                    </label>
+                    <input type="text" name="last_name" value="{{ user.last_name or '' }}"
+                        class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    {% if user.last_name %}
+                    <p class="mt-2 text-xs text-slate-400">
+                        {{ _('Actual') }}: <span class="italic">{{ user.last_name }}</span>
+                    </p>
+                    {% endif %}
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                        {{ _('Organización') }}
+                    </label>
+                    <input type="text" name="organization" value="{{ user.organization or '' }}"
+                        class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    {% if user.organization %}
+                    <p class="mt-2 text-xs text-slate-400">
+                        {{ _('Actual') }}: <span class="italic">{{ user.organization }}</span>
+                    </p>
+                    {% endif %}
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                        {{ _('Contacto') }}
+                    </label>
+                    <input type="text" name="contact" value="{{ user.contact or '' }}"
+                        class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Teléfono, sitio web, etc.">
+                    {% if user.contact %}
+                    <p class="mt-2 text-xs text-slate-400">
+                        {{ _('Actual') }}: <span class="italic">{{ user.contact }}</span>
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Role -->
+        <div
+            class="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-200 dark:border-neutral-700 p-6 mb-6">
+            <h2 class="text-sm font-semibold uppercase text-slate-500 dark:text-slate-400 mb-4">
+                {{ _('Rol y permisos') }}
+            </h2>
+            <div>
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    {{ _('Rol') }}
+                </label>
+                {% if user.id == current_user_id %}
+                <p class="text-slate-600 dark:text-slate-400 italic mb-2">
+                    {{ _('No puedes cambiar tu propio rol.') }}
+                </p>
+                <input type="hidden" name="role" value="{{ user.role }}">
+                <div class="inline-flex items-center px-3 py-2 rounded bg-slate-100 dark:bg-slate-700">
+                    <span class="font-medium">{{ user.role }}</span>
+                </div>
+                {% else %}
+                <select name="role"
+                    class="w-full max-w-xs px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    {% for role in valid_roles %}
+                    <option value="{{ role }}" {% if user.role==role %}selected{% endif %}>
+                        {{ role }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <p class="mt-2 text-xs text-slate-400">
+                    {{ _('Actual') }}: <span class="font-medium">{{ user.role }}</span>
+                </p>
+                {% endif %}
+            </div>
+
+            <!-- Role descriptions -->
+            <div class="mt-4 p-4 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700">
+                <p class="text-xs text-slate-500 dark:text-slate-400 mb-2 font-medium">{{ _('Descripción de roles:') }}
+                </p>
+                <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1">
+                    <li><span class="font-medium text-purple-600 dark:text-purple-400">admin</span>: {{ _('Acceso
+                        total') }}</li>
+                    <li><span class="font-medium text-blue-600 dark:text-blue-400">reviewer</span>: {{ _('Aprueba
+                        cambios y edita') }}</li>
+                    <li><span class="font-medium text-green-600 dark:text-green-400">editor</span>: {{ _('Propone
+                        cambios') }}</li>
+                    <li><span class="font-medium text-slate-600 dark:text-slate-400">viewer</span>: {{ _('Solo lectura')
+                        }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Read-only Info -->
+        <div class="bg-slate-50 dark:bg-neutral-900 rounded-lg border border-gray-200 dark:border-neutral-700 p-6 mb-6">
+            <h2 class="text-sm font-semibold uppercase text-slate-500 dark:text-slate-400 mb-4">
+                {{ _('Información de cuenta (solo lectura)') }}
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <span class="font-medium text-slate-600 dark:text-slate-400">{{ _('Email') }}:</span>
+                    <span class="text-slate-700 dark:text-slate-300">{{ user.email }}</span>
+                </div>
+                <div>
+                    <span class="font-medium text-slate-600 dark:text-slate-400">{{ _('Registrado') }}:</span>
+                    <span class="text-slate-700 dark:text-slate-300">{{ user.created_at.strftime('%Y-%m-%d %H:%M')
+                        }}</span>
+                </div>
+                <div>
+                    <span class="font-medium text-slate-600 dark:text-slate-400">{{ _('ID') }}:</span>
+                    <span class="text-slate-700 dark:text-slate-300">#{{ user.id }}</span>
+                </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">
+                {{ _('El email y la contraseña solo pueden ser modificados por el propio usuario.') }}
+            </p>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-4">
+            <button type="submit"
+                class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded transition-colors">
+                {{ _('Guardar cambios') }}
+            </button>
+            <a href="{{ url_for('admin.user_detail', user_id=user.id) }}"
+                class="px-6 py-2.5 border border-slate-400 dark:border-slate-500 text-slate-600 dark:text-slate-300 font-medium rounded hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                {{ _('Cancelar') }}
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}

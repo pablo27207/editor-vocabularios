@@ -112,7 +112,7 @@ def register():
             
         flash(error)
         
-    return render_template('register.html')
+    return render_template('auth/register.html')
 
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
@@ -141,7 +141,7 @@ def login():
             
         flash(error)
         
-    return render_template('login.html')
+    return render_template('auth/login.html')
 
 
 @auth_bp.route('/logout')
@@ -172,10 +172,10 @@ def profile():
         if new_password:
             if new_password != confirm_password:
                 flash('Las contraseñas no coinciden.')
-                return render_template('profile.html', user=user)
+                return render_template('auth/profile.html', user=user)
             if not is_strong_password(new_password):
                 flash('La contraseña debe tener al menos 8 caracteres, una mayúscula y un número o símbolo.')
-                return render_template('profile.html', user=user)
+                return render_template('auth/profile.html', user=user)
             user.password_hash = generate_password_hash(new_password)
         
         db.session.commit()
@@ -183,4 +183,4 @@ def profile():
         flash('Perfil actualizado correctamente.')
         return redirect(url_for('auth.profile'))
     
-    return render_template('profile.html', user=user)
+    return render_template('auth/profile.html', user=user)

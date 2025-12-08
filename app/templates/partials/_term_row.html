@@ -1,25 +1,23 @@
-<tr id="term-{{ term.id }}">
+<tr id="term-{{ term.id }}"
+    class="{% if term.deleted_at %}bg-red-50 dark:bg-red-900/10 opacity-60{% endif %} hover:bg-slate-50 dark:hover:bg-neutral-700/50 cursor-pointer transition-colors"
+    onclick="window.location='{{ url_for('vocab.term_detail_page', term_id=term.id) }}'">
     <td class="table-cell font-medium">
-        {{ term.concept_id }}
+        <a href="{{ url_for('vocab.term_detail_page', term_id=term.id) }}"
+            class="text-blue-600 dark:text-blue-400 hover:underline" onclick="event.stopPropagation()">
+            {{ term.concept_id }}
+        </a>
+        {% if term.deleted_at %}
+        <span class="ml-1 text-xs text-red-500" title="Eliminado">✕</span>
+        {% endif %}
     </td>
     <td class="table-cell text-gray-500 dark:text-gray-400 whitespace-normal">
         <span class="lang-es">{{ term.pref_label_es or '-' }}</span>
         <span class="lang-en">{{ term.pref_label_en or '-' }}</span>
     </td>
     <td class="table-cell text-gray-500 dark:text-gray-400 whitespace-normal">
-        <span class="lang-es">{{ term.definition_es or '-' }}</span>
-        <span class="lang-en">{{ term.definition_en or '-' }}</span>
-    </td>
-    <td class="table-cell text-right font-medium">
-        {% if user_role in ['admin', 'reviewer', 'editor'] %}
-        <button hx-get="{{ url_for('vocab.edit_term_form', term_id=term.id) }}" hx-target="#term-{{ term.id }}"
-            hx-swap="outerHTML" class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
-            <span class="lang-es">Editar</span>
-            <span class="lang-en">Edit</span>
-        </button>
-        {% endif %}
-        {% if message %}
-        <span class="ml-2 text-green-600 dark:text-green-400 text-xs">{{ message }}</span>
-        {% endif %}
+        <span class="lang-es">{{ term.definition_es[:100] + '...' if term.definition_es and term.definition_es|length >
+            100 else term.definition_es or '-' }}</span>
+        <span class="lang-en">{{ term.definition_en[:100] + '...' if term.definition_en and term.definition_en|length >
+            100 else term.definition_en or '-' }}</span>
     </td>
 </tr>

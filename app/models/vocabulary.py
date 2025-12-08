@@ -9,8 +9,10 @@ class Vocabulary(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     code = db.Column(db.String(50), unique=True, nullable=False)  # e.g., 'QF_IODE'
-    name = db.Column(db.String(200), nullable=False)
-    description = db.Column(db.Text)
+    name = db.Column(db.String(200), nullable=False)  # Name in Spanish (default)
+    name_en = db.Column(db.String(200))  # Name in English
+    description = db.Column(db.Text)  # Description in Spanish (default)
+    description_en = db.Column(db.Text)  # Description in English
     base_uri = db.Column(db.String(200))  # For RDF export
     version = db.Column(db.String(20))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
@@ -35,7 +37,16 @@ class Term(db.Model):
     narrower = db.Column(JSONB)
     related = db.Column(JSONB)
     exact_match = db.Column(JSONB)  # For external mappings
+    close_match = db.Column(JSONB)  # For close external mappings
     
-    status = db.Column(db.String(20), default='approved')  # approved, deprecated
+    # Metadata
+    source = db.Column(db.String(500))  # dc:source from RDF
+    
+    # Status and soft delete
+    status = db.Column(db.String(20), default='approved')  # approved, deprecated, deleted
+    deleted_at = db.Column(db.DateTime, nullable=True)  # Soft delete timestamp
+    deletion_reason = db.Column(db.Text, nullable=True)  # Reason for deletion/deprecation
+    
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+

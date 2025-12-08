@@ -28,6 +28,9 @@ def export_vocab(vocab_id, format):
     elif format == 'ttl':  # Turtle
         data = g.serialize(format='turtle')
         mimetype = "text/turtle"
+    elif format == 'jsonld':  # JSON-LD
+        data = g.serialize(format='json-ld')
+        mimetype = "application/ld+json"
     else:
         abort(400)
         

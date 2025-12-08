@@ -1,4 +1,5 @@
 """Vocabulary routes - viewing and editing terms."""
+from datetime import datetime
 from flask import Blueprint, render_template, request, session
 from app.models import db, Vocabulary, Term, ChangeRequest
 from app.routes.auth import login_required
@@ -9,7 +10,12 @@ vocab_bp = Blueprint('vocab', __name__)
 @vocab_bp.route('/vocab/<int:vocab_id>')
 def view_vocab(vocab_id):
     vocab = Vocabulary.query.get_or_404(vocab_id)
-    terms = Term.query.filter_by(vocab_id=vocab_id).order_by(Term.concept_id).all()
+    # Filter out deleted terms unless explicitly requested
+    show_deleted = request.args.get('show_deleted', 'false') == 'true'
+    if show_deleted:
+        terms = Term.query.filter_by(vocab_id=vocab_id).order_by(Term.concept_id).all()
+    else:
+        terms = Term.query.filter_by(vocab_id=vocab_id).filter(Term.deleted_at.is_(None)).order_by(Term.concept_id).all()
     
     # Build Tree Structure
     term_map = {t.concept_id: t for t in terms}
@@ -34,19 +40,100 @@ def view_vocab(vocab_id):
     
     user_role = session.get('user_role', 'viewer')
     
-    return render_template('vocab_editor.html', vocab=vocab, terms=terms, roots=roots, children_map=children_map, user_role=user_role)
+    return render_template('vocab/editor.html', vocab=vocab, terms=terms, roots=roots, children_map=children_map, user_role=user_role, show_deleted=show_deleted)
+
+
+@vocab_bp.route('/vocab/<int:vocab_id>/term/new')
+@login_required
+def term_create_form(vocab_id):
+    """Show form to create a new term."""
+    vocab = Vocabulary.query.get_or_404(vocab_id)
+    user_role = session.get('user_role', 'viewer')
+    all_terms = Term.query.filter_by(vocab_id=vocab_id).order_by(Term.concept_id).all()
+    return render_template('terms/create.html', vocab=vocab, user_role=user_role, all_terms=all_terms)
+
+
+@vocab_bp.route('/vocab/<int:vocab_id>/term/create', methods=['POST'])
+@login_required
+def create_term(vocab_id):
+    """Create a new term in the vocabulary."""
+    from flask import redirect, url_for, flash
+    vocab = Vocabulary.query.get_or_404(vocab_id)
+    user_role = session.get('user_role')
+    
+    concept_id = request.form.get('concept_id', '').strip()
+    pref_label_es = request.form.get('pref_label_es', '').strip()
+    pref_label_en = request.form.get('pref_label_en', '').strip()
+    definition_es = request.form.get('definition_es', '').strip()
+    definition_en = request.form.get('definition_en', '').strip()
+    broader_id = request.form.get('broader', '').strip()
+    
+    # Validations
+    if not concept_id:
+        flash('El ID del concepto es requerido.')
+        return redirect(url_for('vocab.term_create_form', vocab_id=vocab_id))
+    
+    # Check if concept_id already exists
+    if Term.query.filter_by(vocab_id=vocab_id, concept_id=concept_id).first():
+        flash(f'El ID "{concept_id}" ya existe en este vocabulario.')
+        return redirect(url_for('vocab.term_create_form', vocab_id=vocab_id))
+    
+    # Create term
+    term = Term(
+        vocab_id=vocab_id,
+        concept_id=concept_id,
+        pref_label_es=pref_label_es or None,
+        pref_label_en=pref_label_en or None,
+        definition_es=definition_es or None,
+        definition_en=definition_en or None,
+        broader=[broader_id] if broader_id else None,
+        status='approved' if user_role in ['admin', 'reviewer'] else 'pending'
+    )
+    db.session.add(term)
+    db.session.commit()
+    
+    flash(f'Término "{concept_id}" creado.')
+    return redirect(url_for('vocab.term_detail_page', term_id=term.id))
+
+
+@vocab_bp.route('/term/<int:term_id>')
+def term_detail_page(term_id):
+    """Full page view for term details."""
+    term = Term.query.get_or_404(term_id)
+    vocab = Vocabulary.query.get(term.vocab_id)
+    user_role = session.get('user_role', 'viewer')
+    show_delete = request.args.get('action') == 'delete'
+    
+    # Get all terms for this vocabulary to resolve broader/narrower references
+    all_terms = {t.concept_id: t for t in Term.query.filter_by(vocab_id=term.vocab_id).all()}
+    
+    return render_template('terms/detail.html', term=term, vocab=vocab, user_role=user_role, all_terms=all_terms, show_delete=show_delete)
 
 
 @vocab_bp.route('/term/<int:term_id>/edit', methods=['GET'])
 @login_required
 def edit_term_form(term_id):
+    """Full page edit form for a term."""
     term = Term.query.get_or_404(term_id)
-    return render_template('partials/_edit_form.html', term=term)
+    vocab = Vocabulary.query.get(term.vocab_id)
+    user_role = session.get('user_role', 'viewer')
+    return render_template('terms/edit.html', term=term, vocab=vocab, user_role=user_role)
+
+
+@vocab_bp.route('/term/<int:term_id>/edit-full', methods=['GET'])
+@login_required
+def edit_term_full(term_id):
+    """Return full edit form for modal display."""
+    term = Term.query.get_or_404(term_id)
+    vocab = Vocabulary.query.get(term.vocab_id)
+    all_terms = Term.query.filter_by(vocab_id=term.vocab_id).filter(Term.id != term_id).all()
+    return render_template('partials/_term_edit_modal.html', term=term, vocab=vocab, all_terms=all_terms)
 
 
 @vocab_bp.route('/term/<int:term_id>/update', methods=['POST'])
 @login_required
 def update_term(term_id):
+    from flask import redirect, url_for, flash
     term = Term.query.get_or_404(term_id)
     user_id = session.get('user_id')
     user_role = session.get('user_role')
@@ -72,7 +159,8 @@ def update_term(term_id):
         term.definition_es = definition_es
         term.definition_en = definition_en
         db.session.commit()
-        return render_template('partials/_term_row.html', term=term, message="Term updated successfully")
+        flash('Término actualizado correctamente', 'success')
+        return redirect(url_for('vocab.term_detail_page', term_id=term.id))
     else:
         # Create Change Request
         cr = ChangeRequest(
@@ -85,10 +173,57 @@ def update_term(term_id):
         )
         db.session.add(cr)
         db.session.commit()
-        return render_template('partials/_term_row.html', term=term, message="Suggestion submitted for review")
+        flash('Sugerencia enviada para revisión', 'info')
+        return redirect(url_for('vocab.term_detail_page', term_id=term.id))
+
+
+@vocab_bp.route('/term/<int:term_id>/delete', methods=['POST'])
+@login_required
+def delete_term(term_id):
+    """Soft delete a term with a reason."""
+    from flask import redirect, url_for, flash
+    term = Term.query.get_or_404(term_id)
+    user_role = session.get('user_role')
+    vocab_id = term.vocab_id
+    
+    if user_role not in ['admin', 'reviewer']:
+        flash('No tienes permisos para eliminar', 'error')
+        return redirect(url_for('vocab.term_detail_page', term_id=term.id))
+    
+    reason = request.form.get('deletion_reason', '')
+    term.deleted_at = datetime.utcnow()
+    term.deletion_reason = reason
+    term.status = 'deleted'
+    db.session.commit()
+    
+    flash('Término eliminado correctamente', 'success')
+    return redirect(url_for('vocab.view_vocab', vocab_id=vocab_id))
+
+
+@vocab_bp.route('/term/<int:term_id>/restore', methods=['POST'])
+@login_required
+def restore_term(term_id):
+    """Restore a soft-deleted term."""
+    from flask import redirect, url_for, flash
+    term = Term.query.get_or_404(term_id)
+    user_role = session.get('user_role')
+    
+    if user_role != 'admin':
+        flash('Solo admins pueden restaurar', 'error')
+        return redirect(url_for('vocab.term_detail_page', term_id=term.id))
+    
+    term.deleted_at = None
+    term.deletion_reason = None
+    term.status = 'approved'
+    db.session.commit()
+    
+    flash('Término restaurado correctamente', 'success')
+    return redirect(url_for('vocab.term_detail_page', term_id=term.id))
 
 
 @vocab_bp.route('/term/<int:term_id>/cancel', methods=['GET'])
 def cancel_edit(term_id):
     term = Term.query.get_or_404(term_id)
-    return render_template('partials/_term_row.html', term=term)
+    user_role = session.get('user_role', 'viewer')
+    return render_template('partials/_term_row.html', term=term, user_role=user_role)
+

@@ -1,0 +1,314 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <!-- Breadcrumb -->
+    <div class="mb-6">
+        <a href="{{ url_for('vocab.view_vocab', vocab_id=vocab.id) }}"
+            class="text-slate-600 dark:text-slate-400 hover:underline">
+            &larr; <span class="lang-es">Volver a</span><span class="lang-en">Back to</span> {{ vocab.name }}
+        </a>
+    </div>
+
+    <!-- Header -->
+    <div
+        class="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-200 dark:border-neutral-700 p-6 mb-6">
+        <div class="flex justify-between items-start mb-4">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-800 dark:text-white">{{ term.concept_id }}</h1>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                    <span class="lang-es">{{ vocab.name }}</span>
+                    <span class="lang-en">{{ vocab.name_en or vocab.name }}</span>
+                </p>
+            </div>
+            {% if term.deleted_at %}
+            <span
+                class="px-3 py-1 text-sm font-semibold rounded-full bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300">
+                <span class="lang-es">Eliminado</span>
+                <span class="lang-en">Deleted</span>
+            </span>
+            {% elif term.status == 'deprecated' %}
+            <span
+                class="px-3 py-1 text-sm font-semibold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300">
+                <span class="lang-es">Obsoleto</span>
+                <span class="lang-en">Deprecated</span>
+            </span>
+            {% else %}
+            <span
+                class="px-3 py-1 text-sm font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
+                <span class="lang-es">Activo</span>
+                <span class="lang-en">Active</span>
+            </span>
+            {% endif %}
+        </div>
+
+        <!-- Labels -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-2">
+                    <span class="lang-es">Etiqueta (ES)</span>
+                    <span class="lang-en">Label (ES)</span>
+                </h3>
+                <p class="text-lg text-slate-800 dark:text-white">{{ term.pref_label_es or '-' }}</p>
+            </div>
+            <div>
+                <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-2">
+                    <span class="lang-es">Etiqueta (EN)</span>
+                    <span class="lang-en">Label (EN)</span>
+                </h3>
+                <p class="text-lg text-slate-800 dark:text-white">{{ term.pref_label_en or '-' }}</p>
+            </div>
+        </div>
+
+        <!-- Definitions -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-2">
+                    <span class="lang-es">Definición (ES)</span>
+                    <span class="lang-en">Definition (ES)</span>
+                </h3>
+                <p class="text-slate-700 dark:text-slate-300">{{ term.definition_es or '-' }}</p>
+            </div>
+            <div>
+                <h3 class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-2">
+                    <span class="lang-es">Definición (EN)</span>
+                    <span class="lang-en">Definition (EN)</span>
+                </h3>
+                <p class="text-slate-700 dark:text-slate-300">{{ term.definition_en or '-' }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alt Labels -->
+    {% if term.alt_labels %}
+    <div
+        class="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-200 dark:border-neutral-700 p-6 mb-6">
+        <h3 class="text-sm font-semibold uppercase text-slate-500 dark:text-slate-400 mb-3">
+            <span class="lang-es">Etiquetas alternativas</span>
+            <span class="lang-en">Alternative Labels</span>
+        </h3>
+        <div class="flex flex-wrap gap-2">
+            {% for alt in term.alt_labels %}
+            <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700 rounded-full">
+                {{ alt.label }} <span class="text-slate-400">({{ alt.lang }})</span>
+            </span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Relationships -->
+    <div
+        class="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-200 dark:border-neutral-700 p-6 mb-6">
+        <h3 class="text-sm font-semibold uppercase text-slate-500 dark:text-slate-400 mb-4">
+            <span class="lang-es">Relaciones</span>
+            <span class="lang-en">Relationships</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Broader -->
+            <div>
+                <h4 class="text-xs font-medium text-slate-600 dark:text-slate-400 mb-2">
+                    <span class="lang-es">Términos más amplios</span>
+                    <span class="lang-en">Broader Terms</span>
+                </h4>
+                {% if term.broader %}
+                <ul class="space-y-1">
+                    {% for b in term.broader %}
+                    <li>
+                        {% if b in all_terms %}
+                        <a href="{{ url_for('vocab.term_detail_page', term_id=all_terms[b].id) }}"
+                            class="text-blue-600 dark:text-blue-400 hover:underline">
+                            {{ b }}
+                        </a>
+                        {% else %}
+                        <span class="text-slate-600 dark:text-slate-400">{{ b }}</span>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="text-slate-400">-</p>
+                {% endif %}
+            </div>
+            <!-- Narrower -->
+            <div>
+                <h4 class="text-xs font-medium text-slate-600 dark:text-slate-400 mb-2">
+                    <span class="lang-es">Términos más específicos</span>
+                    <span class="lang-en">Narrower Terms</span>
+                </h4>
+                {% if term.narrower %}
+                <ul class="space-y-1 max-h-48 overflow-y-auto">
+                    {% for n in term.narrower %}
+                    <li>
+                        {% if n in all_terms %}
+                        <a href="{{ url_for('vocab.term_detail_page', term_id=all_terms[n].id) }}"
+                            class="text-blue-600 dark:text-blue-400 hover:underline">
+                            {{ n }}
+                        </a>
+                        {% else %}
+                        <span class="text-slate-600 dark:text-slate-400">{{ n }}</span>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="text-slate-400">-</p>
+                {% endif %}
+            </div>
+            <!-- Related -->
+            <div>
+                <h4 class="text-xs font-medium text-slate-600 dark:text-slate-400 mb-2">
+                    <span class="lang-es">Términos relacionados</span>
+                    <span class="lang-en">Related Terms</span>
+                </h4>
+                {% if term.related %}
+                <ul class="space-y-1">
+                    {% for r in term.related %}
+                    <li>
+                        {% if r in all_terms %}
+                        <a href="{{ url_for('vocab.term_detail_page', term_id=all_terms[r].id) }}"
+                            class="text-blue-600 dark:text-blue-400 hover:underline">
+                            {{ r }}
+                        </a>
+                        {% else %}
+                        <span class="text-slate-600 dark:text-slate-400">{{ r }}</span>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="text-slate-400">-</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- External Mappings -->
+    {% if term.exact_match or term.close_match %}
+    <div
+        class="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-200 dark:border-neutral-700 p-6 mb-6">
+        <h3 class="text-sm font-semibold uppercase text-slate-500 dark:text-slate-400 mb-4">
+            <span class="lang-es">Mapeos externos</span>
+            <span class="lang-en">External Mappings</span>
+        </h3>
+        <div class="space-y-4">
+            {% if term.exact_match %}
+            <div>
+                <span class="text-xs font-medium text-green-600 dark:text-green-400">exactMatch:</span>
+                <ul class="mt-1 space-y-1">
+                    {% for uri in term.exact_match %}
+                    <li>
+                        <a href="{{ uri }}" target="_blank" rel="noopener"
+                            class="text-blue-600 dark:text-blue-400 hover:underline break-all">
+                            {{ uri }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            {% if term.close_match %}
+            <div>
+                <span class="text-xs font-medium text-yellow-600 dark:text-yellow-400">closeMatch:</span>
+                <ul class="mt-1 space-y-1">
+                    {% for uri in term.close_match %}
+                    <li>
+                        <a href="{{ uri }}" target="_blank" rel="noopener"
+                            class="text-blue-600 dark:text-blue-400 hover:underline break-all">
+                            {{ uri }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Source -->
+    {% if term.source %}
+    <div
+        class="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-200 dark:border-neutral-700 p-6 mb-6">
+        <h3 class="text-sm font-semibold uppercase text-slate-500 dark:text-slate-400 mb-2">
+            <span class="lang-es">Fuente</span>
+            <span class="lang-en">Source</span>
+        </h3>
+        <p class="text-slate-600 dark:text-slate-400">{{ term.source }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Deletion Info -->
+    {% if term.deleted_at and term.deletion_reason %}
+    <div class="bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800 p-6 mb-6">
+        <h3 class="text-sm font-semibold uppercase text-red-600 dark:text-red-400 mb-2">
+            <span class="lang-es">Motivo de eliminación</span>
+            <span class="lang-en">Deletion Reason</span>
+        </h3>
+        <p class="text-red-700 dark:text-red-300">{{ term.deletion_reason }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Delete Form (shown when ?action=delete) -->
+    {% if show_delete and user_role in ['admin', 'reviewer'] and not term.deleted_at %}
+    <div class="bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-red-700 dark:text-red-400 mb-4">
+            <span class="lang-es">¿Eliminar este término?</span>
+            <span class="lang-en">Delete this term?</span>
+        </h3>
+        <form action="{{ url_for('vocab.delete_term', term_id=term.id) }}" method="POST">
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <span class="lang-es">Motivo de eliminación *</span>
+                    <span class="lang-en">Reason for deletion *</span>
+                </label>
+                <textarea name="deletion_reason" rows="3" required
+                    class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-red-500"
+                    placeholder="Describe por qué se debe eliminar este término..."></textarea>
+            </div>
+            <div class="flex gap-3">
+                <button type="submit" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded">
+                    <span class="lang-es">Confirmar eliminación</span>
+                    <span class="lang-en">Confirm Delete</span>
+                </button>
+                <a href="{{ url_for('vocab.term_detail_page', term_id=term.id) }}"
+                    class="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-medium rounded hover:bg-slate-300 dark:hover:bg-slate-600">
+                    <span class="lang-es">Cancelar</span>
+                    <span class="lang-en">Cancel</span>
+                </a>
+            </div>
+        </form>
+    </div>
+    {% endif %}
+
+    <!-- Actions -->
+    {% if user_role in ['admin', 'reviewer', 'editor'] %}
+    <div class="flex gap-4 pt-6 border-t border-gray-200 dark:border-neutral-700">
+        {% if term.deleted_at %}
+        {% if user_role == 'admin' %}
+        <form action="{{ url_for('vocab.restore_term', term_id=term.id) }}" method="POST">
+            <button type="submit"
+                class="px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white font-medium rounded transition-colors">
+                <span class="lang-es">Restaurar término</span>
+                <span class="lang-en">Restore Term</span>
+            </button>
+        </form>
+        {% endif %}
+        {% else %}
+        <a href="{{ url_for('vocab.edit_term_form', term_id=term.id) }}"
+            class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded transition-colors">
+            <span class="lang-es">Editar</span>
+            <span class="lang-en">Edit</span>
+        </a>
+        {% if not show_delete %}
+        <a href="{{ url_for('vocab.term_detail_page', term_id=term.id) }}?action=delete"
+            class="px-6 py-2.5 border border-red-600 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 font-medium rounded transition-colors">
+            <span class="lang-es">Eliminar</span>
+            <span class="lang-en">Delete</span>
+        </a>
+        {% endif %}
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
