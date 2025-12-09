@@ -106,6 +106,27 @@
                     class="w-full max-w-xs px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500"
                     placeholder="1.0">
             </div>
+
+            <!-- Owner -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <span class="lang-es">{{ _('Responsable') }}</span>
+                    <span class="lang-en">Owner</span>
+                </label>
+                <select name="owner_id"
+                    class="w-full max-w-md px-3 py-2 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500">
+                    <option value="">-- {{ _('Sin asignar') }} / Unassigned --</option>
+                    {% for user in users %}
+                    <option value="{{ user.id }}" {% if user.id==current_user_id %}selected{% endif %}>
+                        {{ user.name }} {{ user.last_name or '' }} ({{ user.email }})
+                    </option>
+                    {% endfor %}
+                </select>
+                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                    <span class="lang-es">Usuario responsable del vocabulario.</span>
+                    <span class="lang-en">User responsible for the vocabulary.</span>
+                </p>
+            </div>
         </div>
 
         <!-- Actions -->

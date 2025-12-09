@@ -58,6 +58,77 @@
     </div>
 </div>
 
+<!-- Vocabulary Info Panel -->
+<details class="panel-container mb-4" open>
+    <summary class="panel-header cursor-pointer select-none flex justify-between items-center">
+        <h2 class="panel-title">
+            <span class="lang-es">{{ _('Información del Vocabulario') }}</span>
+            <span class="lang-en">Vocabulary Information</span>
+        </h2>
+        <span class="text-sm text-blue-600 dark:text-blue-400">▼</span>
+    </summary>
+    <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Code -->
+        <div>
+            <span class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">
+                <span class="lang-es">{{ _('Código') }}</span>
+                <span class="lang-en">Code</span>
+            </span>
+            <p class="font-mono text-slate-800 dark:text-slate-200">{{ vocab.code }}</p>
+        </div>
+        <!-- Version -->
+        <div>
+            <span class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">
+                <span class="lang-es">{{ _('Versión') }}</span>
+                <span class="lang-en">Version</span>
+            </span>
+            <p class="text-slate-800 dark:text-slate-200">{{ vocab.version or '-' }}</p>
+        </div>
+        <!-- Base URI -->
+        <div>
+            <span class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">
+                <span class="lang-es">{{ _('URI Base') }}</span>
+                <span class="lang-en">Base URI</span>
+            </span>
+            <p class="text-slate-800 dark:text-slate-200 font-mono text-sm truncate" title="{{ vocab.base_uri }}">
+                {{ vocab.base_uri or '-' }}
+            </p>
+        </div>
+        <!-- Owner -->
+        <div>
+            <span class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">
+                <span class="lang-es">{{ _('Responsable') }}</span>
+                <span class="lang-en">Owner</span>
+            </span>
+            <p class="text-slate-800 dark:text-slate-200">
+                {% if vocab.owner %}
+                {{ vocab.owner.name }} {{ vocab.owner.last_name or '' }}
+                {% else %}
+                <span class="text-slate-400 dark:text-slate-500">-</span>
+                {% endif %}
+            </p>
+        </div>
+        <!-- Created -->
+        <div>
+            <span class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">
+                <span class="lang-es">{{ _('Creado') }}</span>
+                <span class="lang-en">Created</span>
+            </span>
+            <p class="text-slate-800 dark:text-slate-200">{{ vocab.created_at.strftime('%d/%m/%Y') }}</p>
+        </div>
+        <!-- Edit Button -->
+        {% if user_role in ['admin', 'reviewer'] %}
+        <div class="flex items-end">
+            <a href="{{ url_for('vocab.vocab_edit_form', vocab_id=vocab.id) }}"
+                class="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                <span class="lang-es">{{ _('Editar información') }}</span>
+                <span class="lang-en">Edit information</span>
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</details>
+
 <!-- Tree View -->
 <div class="panel-container">
     <div class="panel-header">

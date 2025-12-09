@@ -2,7 +2,7 @@
 from datetime import datetime
 from flask import Blueprint, render_template, request, session, redirect, url_for, flash
 from flask_babel import gettext as _
-from app.models import db, Vocabulary, Term, ChangeRequest
+from app.models import db, Vocabulary, Term, ChangeRequest, User
 from app.routes.auth import login_required
 
 vocab_bp = Blueprint('vocab', __name__)
@@ -40,7 +40,9 @@ def vocab_create_form():
     if user_role not in ['admin', 'reviewer', 'editor']:
         flash(_('No tienes permisos para crear vocabularios.'), 'error')
         return redirect(url_for('vocab.vocab_list'))
-    return render_template('vocab/create.html', user_role=user_role)
+    users = User.query.order_by(User.name).all()
+    current_user_id = session.get('user_id')
+    return render_template('vocab/create.html', user_role=user_role, users=users, current_user_id=current_user_id)
 
 
 @vocab_bp.route('/vocab/new', methods=['POST'])
@@ -72,6 +74,9 @@ def vocab_create():
         flash(_('Ya existe un vocabulario con ese código.'), 'error')
         return render_template('vocab/create.html', user_role=user_role)
     
+    # Get owner_id
+    owner_id = request.form.get('owner_id', '').strip()
+    
     # Create vocabulary
     vocab = Vocabulary(
         code=code,
@@ -80,7 +85,8 @@ def vocab_create():
         description=description or None,
         description_en=description_en or None,
         base_uri=base_uri or None,
-        version=version or None
+        version=version or None,
+        owner_id=int(owner_id) if owner_id else None
     )
     
     db.session.add(vocab)
@@ -101,7 +107,8 @@ def vocab_edit_form(vocab_id):
         flash(_('No tienes permisos para editar vocabularios.'), 'error')
         return redirect(url_for('vocab.view_vocab', vocab_id=vocab_id))
     
-    return render_template('vocab/edit.html', vocab=vocab, user_role=user_role)
+    users = User.query.order_by(User.name).all()
+    return render_template('vocab/edit.html', vocab=vocab, user_role=user_role, users=users)
 
 
 @vocab_bp.route('/vocab/<int:vocab_id>/edit', methods=['POST'])
@@ -121,6 +128,8 @@ def vocab_edit(vocab_id):
     vocab.description_en = request.form.get('description_en', '').strip() or None
     vocab.base_uri = request.form.get('base_uri', '').strip() or None
     vocab.version = request.form.get('version', '').strip() or None
+    owner_id = request.form.get('owner_id', '').strip()
+    vocab.owner_id = int(owner_id) if owner_id else None
     
     db.session.commit()
     

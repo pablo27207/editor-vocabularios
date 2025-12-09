@@ -15,7 +15,10 @@ class Vocabulary(db.Model):
     description_en = db.Column(db.Text)  # Description in English
     base_uri = db.Column(db.String(200))  # For RDF export
     version = db.Column(db.String(20))
+    owner_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    
+    owner = db.relationship('User', backref='owned_vocabularies')
     
     terms = db.relationship('Term', backref='vocabulary', lazy=True)
 
